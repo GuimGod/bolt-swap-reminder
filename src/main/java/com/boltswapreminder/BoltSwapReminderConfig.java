@@ -50,7 +50,7 @@ public interface BoltSwapReminderConfig extends Config
 	@ConfigItem(
 		keyName = "reportBug",
 		name = "Bug or suggestion",
-		description = "Click to open the report form in your browser (a Google Form of the plugin's author), to write what is wrong or what you would like. The plugin itself sends nothing",
+		description = "Click to open a window where you write what is wrong or what you would like. It shows what goes with your words (the monster and the items you wear and carry) and sends it to the plugin's author only when you press Send",
 		position = 100
 	)
 	default boolean reportBug()

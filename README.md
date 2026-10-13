@@ -52,4 +52,8 @@ Monster defence and hitpoints come from the [OSRS Wiki](https://oldschool.runesc
 
 ## Bug or suggestion
 
-Click "Bug or suggestion" in the plugin's settings: it opens a form in your browser where you write what is wrong or what you would like. The plugin itself sends nothing. You can also open an issue on this repository.
+Click "Bug or suggestion" in the plugin's settings: it opens a window where you write what is wrong or what you would like. Under your words it shows exactly what goes with them: the plugin's name, the monster you were fighting, the ids of the items you wear and carry, and the map region. No name of yours or of your account.
+
+- "Send the report" sends it to the author's Google Form. Nothing is sent until you press it.
+- "Open the report on GitHub" opens a new issue with the text filled in, for you to post.
+- "Copy the report" puts it on the clipboard.
