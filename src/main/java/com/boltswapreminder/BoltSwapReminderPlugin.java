@@ -26,11 +26,13 @@ import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.gameval.VarPlayerID;
 import net.runelite.api.gameval.VarbitID;
 import net.runelite.client.config.ConfigManager;
+import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.overlay.OverlayManager;
+import net.runelite.client.util.LinkBrowser;
 
 /**
  * With a crossbow in hand, ruby or diamond bolts (e) in the ammunition slot (or in Dizana's quiver) and
@@ -559,5 +561,18 @@ public class BoltSwapReminderPlugin extends Plugin
 			lastPlayerFight = tick;
 		}
 		return lastPlayerFight >= 0 && tick - lastPlayerFight <= PLAYER_FIGHT_TICKS;
+	}
+
+	/** The author's form for a bug or a suggestion, with the plugin's name filled in. The player writes and sends it in the browser. */
+	static final String REPORT_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSclvrdcVzomW3-4lj7-gnvbzmerY6qwHepApCuI7e4Q8raDyw/viewform?usp=pp_url&entry.2100394972=Bolt%20Swap%20Reminder";
+
+	/** "Bug or suggestion" in the settings works as a button: each click opens the form, whichever way the box ends up. */
+	@Subscribe
+	public void onConfigChanged(ConfigChanged event)
+	{
+		if ("boltswapreminder".equals(event.getGroup()) && "reportBug".equals(event.getKey()) && event.getNewValue() != null)
+		{
+			LinkBrowser.browse(REPORT_FORM);
+		}
 	}
 }

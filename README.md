@@ -49,3 +49,7 @@ The other bolts are pointed out as soon as they deal more, by any margin and wit
 ## Data
 
 Monster defence and hitpoints come from the [OSRS Wiki](https://oldschool.runescape.wiki) through its DPS calculator project; each monster's Slayer category comes from the wiki's monster infoboxes.
+
+## Bug or suggestion
+
+Click "Bug or suggestion" in the plugin's settings: it opens a form in your browser where you write what is wrong or what you would like. The plugin itself sends nothing. You can also open an issue on this repository.
