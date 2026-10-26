@@ -221,7 +221,7 @@ public class BoltSwapReminderPlugin extends Plugin
 		boolean fromQuiver = shotFromQuiver(slotId > 0 ? name(slotId) : null, quiverId > 0 ? name(quiverId) : null);
 		int ammoId = fromQuiver ? quiverId : slotId;
 		String weaponName = name(weapon.getId());
-		if (!weaponName.toLowerCase(Locale.ROOT).contains("crossbow"))
+		if (!firesGemBolts(weaponName))
 		{
 			return null;
 		}
@@ -363,7 +363,7 @@ public class BoltSwapReminderPlugin extends Plugin
 		}
 		Item weapon = worn.getItem(EquipmentInventorySlot.WEAPON.getSlotIdx());
 		Item slot = worn.getItem(EquipmentInventorySlot.AMMO.getSlotIdx());
-		if (weapon == null || weapon.getId() <= 0 || !name(weapon.getId()).toLowerCase(Locale.ROOT).contains("crossbow"))
+		if (weapon == null || weapon.getId() <= 0 || !firesGemBolts(name(weapon.getId())))
 		{
 			return null;
 		}
@@ -419,6 +419,16 @@ public class BoltSwapReminderPlugin extends Plugin
 	static boolean shotFromQuiver(String slotName, String quiverName)
 	{
 		return isBolts(quiverName) && !isBolts(slotName);
+	}
+
+	/**
+	 * True for a crossbow that shoots ruby and diamond bolts (e). The ascension crossbows shoot only ascension bolts, whose
+	 * gem effects trigger half as often (OSRS Wiki, Ascension crossbows): nothing to say for them.
+	 */
+	static boolean firesGemBolts(String weaponName)
+	{
+		String n = weaponName == null ? "" : weaponName.toLowerCase(Locale.ROOT);
+		return n.contains("crossbow") && !n.contains("ascension");
 	}
 
 	static boolean isBolts(String itemName)
