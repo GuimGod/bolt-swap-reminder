@@ -22,4 +22,16 @@ public class AscensionCrossbowTest
 		assertNull(BoltSwapReminderPlugin.kind("Diamond ascension bolts (e)"));
 		assertNull(BoltSwapReminderPlugin.kind("Onyx ascension bolts (e)"));
 	}
+
+	@Test
+	public void ascensionBoltsInTheSlotLeaveTheQuiversRubiesShot()
+	{
+		// a Zaryte crossbow cannot fire the ascension bolts in the slot: the game shoots the quiver's rubies (with
+		// the crossbows' bolts on, the rubies in Dizana's max cape)
+		assertTrue(BoltSwapReminderPlugin.shotFromQuiver("Diamond ascension bolts (e)", "Ruby dragon bolts (e)"));
+		assertFalse(BoltSwapReminderPlugin.shotFromQuiver("Ruby dragon bolts (e)", "Diamond ascension bolts (e)"));
+		assertFalse(BoltSwapReminderPlugin.shotFromQuiver("Diamond dragon bolts (e)", "Ruby dragon bolts (e)"));
+		assertTrue(BoltSwapReminderPlugin.shotFromQuiver("Rada's blessing 4", "Ruby dragon bolts (e)"));
+		assertFalse(BoltSwapReminderPlugin.shotFromQuiver(null, null));
+	}
 }

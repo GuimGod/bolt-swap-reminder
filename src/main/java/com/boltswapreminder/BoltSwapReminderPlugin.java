@@ -413,12 +413,19 @@ public class BoltSwapReminderPlugin extends Plugin
 	}
 
 	/**
-	 * Whether the crossbow shoots the bolts in Dizana's quiver: only when the quiver holds bolts and the
-	 * ammunition slot does not (bolts in the slot are shot first).
+	 * Whether the crossbow shoots the bolts in Dizana's quiver: only when the quiver holds bolts it fires and the
+	 * ammunition slot does not (bolts in the slot are shot first). Ascension bolts in the slot hold nothing back: only
+	 * the ascension crossbows fire them (OSRS Wiki), so a Zaryte crossbow with them on shoots the quiver's rubies.
 	 */
 	static boolean shotFromQuiver(String slotName, String quiverName)
 	{
-		return isBolts(quiverName) && !isBolts(slotName);
+		return firedBolts(quiverName) && !firedBolts(slotName);
+	}
+
+	/** Bolts a crossbow other than the ascension crossbows fires: any bolts but ascension bolts. */
+	static boolean firedBolts(String itemName)
+	{
+		return isBolts(itemName) && !itemName.toLowerCase(Locale.ROOT).contains("ascension bolts");
 	}
 
 	/**
