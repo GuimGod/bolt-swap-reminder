@@ -13,7 +13,8 @@ import org.junit.Test;
 
 /**
  * Every form a monster is fought in has its row (GitHub issue #1: Vorkath awake, the Demonic gorillas, each phase of the
- * Alchemical Hydra). NPC ids: OSRS Wiki infoboxes (Bucket table infobox_monster, read 2026-11-19).
+ * Alchemical Hydra). NPC ids: OSRS Wiki infoboxes (Bucket table infobox_monster, read 2026-11-19); numbers: the OSRS Wiki DPS
+ * calculator's monster data of 2026-11-11.
  */
 public class MonsterIdsTest
 {
@@ -46,19 +47,26 @@ public class MonsterIdsTest
 	}
 
 	@Test
-	public void anUnlistedIdFallsBackOnTheNameOnlyWhenItsRowsAgree() throws Exception
+	public void aFormWithOtherNumbersIsNeverTakenForAnother() throws Exception
 	{
 		BoltData data = new BoltData();
-		// every Demonic gorilla row is the same fight
-		BoltData.Monster gorilla = data.monster(999999, "Demonic gorilla");
-		assertNotNull(gorilla);
-		assertEquals(200, gorilla.defenceLevel);
-		// Vorkath's two versions differ: an unknown id is not guessed
-		assertNull(data.monster(999999, "Vorkath"));
-		assertNull(data.monster(999999, "Not a monster"));
-		assertNull(data.monster(999999, null));
-		// a listed id is never overridden by its name
-		assertEquals(164, data.monster(8060, "Vorkath").defenceLevel);
+		// forms the calculator has no row for are left out, not given the numbers of a form of the same name (OSRS Wiki:
+		// Tekton (Challenge Mode) 246 Defence and 450 hitpoints, Callisto in the PvM Arena 440 and 255, the Deadman bosses)
+		assertNull(data.monster(7545));
+		assertNull(data.monster(6503));
+		assertNull(data.monster(12439));
+		// the quest's Phantom Muspah (Secrets of the North) is not the boss: 550 hitpoints, heavy ranged defence 160 in
+		// the melee form, 0 in the teleporting one
+		is(data, 12074, "Phantom Muspah", 200, 550);
+		assertEquals(160, data.monster(12074).heavyDefence);
+		is(data, 12081, "Phantom Muspah", 200, 550);
+		assertEquals(0, data.monster(12081).heavyDefence);
+		is(data, 12078, "Phantom Muspah", 200, 850);
+		// the Feral Vampyres of Meiyerditch: Defence 30
+		is(data, 3707, "Feral Vampyre", 30, 80);
+		is(data, 3708, "Feral Vampyre", 30, 80);
+		// the Giant Rock Crab of the Tonali Cavern: heavy ranged defence 250
+		assertEquals(250, data.monster(14424).heavyDefence);
 	}
 
 	@Test

@@ -179,7 +179,7 @@ public class BoltSwapReminderPlugin extends Plugin
 			return null;
 		}
 		NPC npc = lastNpc;
-		BoltData.Monster monster = data.monster(npc.getId(), npc.getName());
+		BoltData.Monster monster = data.monster(npc.getId());
 		if (monster == null)
 		{
 			return null; // not a monster of the table

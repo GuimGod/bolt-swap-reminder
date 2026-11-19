@@ -104,6 +104,7 @@
 11726	Arcane Scarab	80	50	40	0		
 3301	Archer (Ardougne)	20	19	50	0		
 4096	Archer (Burthorpe)	40	45	50	0		
+16659	Archive Guardian	260	50	550	0		
 9246	Arianwyn (Nightmare Zone)	102	180	300	0		
 9248	Arianwyn (Nightmare Zone)	102	180	300	0		
 8865	Arianwyn	102	180	300	0		
@@ -203,6 +204,8 @@
 736	Bandit (Pollnivneach)	20	0	30	0		
 734	Bandit (Pollnivneach)	30	0	30	0		
 11063	Bandit (Shayzien)	17	4	27	0		
+11064	Bandit (Shayzien)	17	4	27	0		
+11065	Bandit (Shayzien)	17	4	27	0		
 13283	Bandit (Varlamore)	17	4	27	0		
 738	Bandit champion	50	0	50	0		
 6605	Bandit	57	0	155	0		bandits
@@ -306,6 +309,8 @@
 4535	Blessed giant rat	1	-24	30	0		rats
 4533	Blessed spider	35	16	32	0		spiders
 8978	Blessed spider	35	16	32	0		spiders
+16598	Blink	99	0	99	0		
+16625	Blink	1	0	99	0		
 2650	Blood Blamish Snail	30	50	10	0		
 2645	Blood Blamish Snail	45	50	13	0		
 13021	Blood jaguar	28	0	100	0		
@@ -338,6 +343,7 @@
 10691	Body Golem	45	10	60	2		
 10692	Body Golem	45	10	60	2		
 2613	Boris	10	-21	60	0		
+16640	Bork	300	5	1500	0		
 3939	Borrokar	40	0	50	0		
 1224	Bouncer	120	0	116	0		hellhounds
 3508	Bouncer (ghost)	145	0	120	0		
@@ -366,7 +372,9 @@
 13795	Brutal blue dragon	198	10	245	0		blue dragons
 2918	Brutal green dragon	168	10	175	0		
 7274	Brutal red dragon	198	10	285	0		red dragons
+15627	Brutus	10	-7	60	0		cows
 15626	Brutus	10	-7	58	0		cows
+15625	Brutus	10	-7	58	0		
 8195	Bryophyta	100	0	115	0		moss giants
 13004	Buffalo	1	-21	20	0		cows
 15194	Bull shark	20	40	81	0		
@@ -464,6 +472,8 @@
 1067	Confusion beast	40	0	28	0		
 4694	Confusion beast	52	0	64	0		
 319	Corporeal Beast	310	100	2000	0		
+16688	Corpse (Xarth)	100	80	62	0		
+16687	Corpse (Xarth)	100	80	62	0		
 8000	Corrupt Lizardman	38	0	50	0		lizardmen
 7996	Corrupt Lizardman (Nightmare Zone)	38	0	150	0		lizardmen
 7997	Corrupt Lizardman (Nightmare Zone)	38	0	50	0		lizardmen
@@ -581,6 +591,9 @@
 7259	Dagannoth	50	0	70	0		dagannoth
 973	Dagannoth	71	50	120	0		dagannoth
 7260	Dagannoth	71	50	120	0		dagannoth
+16643	Dagon'hai Elder	100	80	640	0		
+16647	Dagon'hai Monk	100	80	640	0		
+16645	Dagon'hai Monk	100	80	640	0		
 9561	Damien Leucurte	160	30	217	0		vampyres
 1134	Damis (Nightmare Zone)	90	60	198	0		
 6346	Damis (Nightmare Zone)	90	60	90	0		
@@ -654,6 +667,7 @@
 1644	Dragon impling	0	-10	10	0		
 8612	Drake	120	0	225	2		drakes
 13680	Dreadborn Araxyte	100	100	350	0		araxytes;spiders
+16665	Dreadnoth the Jellied	125	80	2100	0		
 15164	Drink troll	9	0	25	0		trolls
 15175	Drink troll queen	155	100	315	0		
 3258	Druid	32	0	30	0		
@@ -781,6 +795,7 @@
 1275	Experiment	30	0	100	0		
 1274	Experiment	30	0	100	0		
 1273	Experiment	50	0	40	0		
+16652	Ezekiel	200	320	3000	0		
 3456	Fareed	135	0	130	0		
 4115	Fareed (Nightmare Zone)	135	0	255	0		
 6348	Fareed (Nightmare Zone)	135	0	130	0		
@@ -796,7 +811,8 @@
 5641	Feral Vampyre	30	0	135	0		vampyres
 5642	Feral Vampyre	30	0	185	0		vampyres
 3237	Feral Vampyre	55	0	40	0		vampyres
-3707	Feral Vampyre	60	0	80	0		vampyres
+4431	Feral Vampyre	30	0	80	0		vampyres
+3707	Feral Vampyre	30	0	80	0		vampyres
 5640	Feral Vampyre	30	0	75	0		vampyres
 3234	Feral Vampyre	65	0	50	0		vampyres
 3137	Feral Vampyre	81	0	60	0		vampyres
@@ -909,6 +925,10 @@
 2994	Giant lobster (Ghosts Ahoy)	40	5	32	0		scorpions
 15034	Giant lobster (The Red Reef)	60	60	100	0		
 5779	Giant Mole	200	60	200	0		bosses
+16357	Giant Mole (LANScape)	200	60	1000	0		
+16356	Giant Mole (LANScape)	200	60	1000	0		
+16355	Giant Mole (LANScape)	200	60	1000	0		
+16354	Giant Mole (LANScape)	200	60	1000	0		
 1041	Giant mosquito	45	0	3	0		
 7223	Giant rat (Scurrius)	10	0	15	0		rats
 9483	Giant rat (Tutorial Island)	1	-100	3	0		
@@ -923,6 +943,7 @@
 6384	Giant Roc (Nightmare Zone)	100	0	250	0		birds
 2261	Giant Rock Crab	200	80	180	0		crabs
 5940	Giant Rock Crab	200	80	180	0		crabs
+14424	Giant Rock Crab	200	250	180	0		
 7392	Giant rockslug	77	0	77	2		rockslugs
 797	Giant Scarab	169	149	130	0		scabarites
 1127	Giant Scarab (Nightmare Zone)	169	149	255	0		scabarites
@@ -1019,7 +1040,6 @@
 2207	Growler	120	5	146	0		
 8194	Growthling	40	0	10	0		
 14857	Gryphon	50	60	110	0		gryphons
-15009	Gryphon (Troubled Tortugans)	50	60	110	0		gryphons
 13986	Guard (Aldarin)	14	20	22	0		
 13995	Guard (Aldarin)	14	20	22	0		
 13987	Guard (Aldarin)	14	20	22	0		
@@ -1055,10 +1075,10 @@
 4522	Guard (H.A.M. Storerooms)	12	7	30	0		
 397	Guard (Hosidius)	16	5	22	0		
 399	Guard (Hosidius)	16	5	22	0		
-14887	Guard (Port Roberts)	14	0	22	0		
-14888	Guard (Port Roberts)	14	0	22	0		
-14889	Guard (Port Roberts)	14	0	22	0		
-14890	Guard (Port Roberts)	14	0	22	0		
+14887	Guard (Port Roberts)	14	20	22	0		
+14888	Guard (Port Roberts)	14	20	22	0		
+14889	Guard (Port Roberts)	14	20	22	0		
+14890	Guard (Port Roberts)	14	20	22	0		
 1546	Guard (Port Sarim jail)	14	20	22	0		
 1547	Guard (Port Sarim jail)	14	20	22	0		
 1548	Guard (Port Sarim jail)	14	20	22	0		
@@ -1236,6 +1256,7 @@
 854	Icelord	40	0	60	0		ice warriors
 853	Icelord	40	0	60	0		ice warriors
 852	Icelord	40	0	60	0		ice warriors
+16650	Imp (Dagon'hai Trio)	0	0	44	0		
 3355	Imp Champion	5	0	40	0		
 3134	Imp	6	-42	10	0		
 5007	Imp	1	-42	8	0		
@@ -1278,6 +1299,7 @@
 7700	JalTok-Jad	480	0	350	0		tzhaar
 12817	Javelin Colossus	190	30	220	0		
 3282	Jeff	1	-10	7	0		
+16666	Jelly (Dreadnoth)	100	-50	61	0		
 441	Jelly	120	0	75	0		jellies
 11245	Jelly	120	0	75	0		jellies
 442	Jelly	120	0	75	0		jellies
@@ -1512,6 +1534,7 @@
 2919	Mithril dragon	268	20	254	0		metal dragons
 2592	Mogre	48	0	48	0		mogres;ogres
 15230	Mogre (sea)	40	0	59	0		mogres;ogres
+16667	Moia	195	140	1900	0		
 1	Molanisk	50	55	52	0		molanisks
 3485	Monk of Zamorak (Paterdomus)	12	0	10	0		
 3484	Monk of Zamorak (Paterdomus)	22	0	20	0		
@@ -1627,10 +1650,14 @@
 10779	Nylocas Hagios	6	0	3	0		
 8344	Nylocas Hagios	1	0	11	0		
 10776	Nylocas Hagios	1	0	2	0		
+8383	Nylocas Hagios	0	0	25	0		
+10843	Nylocas Hagios	0	0	3	0		
 8345	Nylocas Ischyros	20	0	22	0		
 10777	Nylocas Ischyros	6	0	3	0		
 8342	Nylocas Ischyros	1	0	11	0		
 10774	Nylocas Ischyros	1	0	2	0		
+8381	Nylocas Ischyros	0	0	25	0		
+10841	Nylocas Ischyros	0	0	3	0		
 10820	Nylocas Matomenos	100	0	64	0		
 10828	Nylocas Matomenos	100	0	100	0		
 10862	Nylocas Matomenos	100	0	200	0		
@@ -1643,12 +1670,17 @@
 10778	Nylocas Toxobolos	6	0	3	0		
 8343	Nylocas Toxobolos	1	0	11	0		
 10775	Nylocas Toxobolos	1	0	2	0		
+8382	Nylocas Toxobolos	0	0	25	0		
+10842	Nylocas Toxobolos	0	0	3	0		
 10786	Nylocas Vasilias	50	0	1440	0		
 10807	Nylocas Vasilias	50	0	2500	0		
 8354	Nylocas Vasilias	50	0	2500	0		
 15677	Oaky Doak	65	40	100	0		
 11751	Obelisk (Tombs of Amascut)	100	60	260	0		
 7416	Obor	60	20	120	0		hill giants
+16673	Ocellus	215	50	2500	0		
+16675	Ocellus	250	80	1000	0		
+16677	Ocellus	250	250	5250	0		
 14545	Ocelot	30	0	40	0		
 14547	Ocelot	30	0	40	0		
 14546	Ocelot	30	0	40	0		
@@ -1679,6 +1711,14 @@
 8994	Othainian	77	0	87	0		
 2843	Otherworldly being	46	15	66	-2		otherworldly beings
 5261	Ouhai	130	0	130	0		monkeys
+16528	Outlaw (A Ruff Situation)	20	0	13	0		
+16527	Outlaw (A Ruff Situation)	20	0	20	0		
+16835	Outlaw (Mudfoot's Big Adventure)	3	8	9	0		
+16839	Outlaw (Mudfoot's Big Adventure)	3	2	9	0		
+16842	Outlaw (Mudfoot's Big Adventure)	3	10	15	0		
+16837	Outlaw (Mudfoot's Big Adventure)	3	8	9	0		
+16840	Outlaw (Mudfoot's Big Adventure)	3	2	9	0		
+16843	Outlaw (Mudfoot's Big Adventure)	3	10	15	0		
 4167	Outlaw	25	0	20	0		
 4176	Outlaw	25	0	20	0		
 4168	Outlaw	25	0	20	0		
@@ -1750,13 +1790,20 @@
 10812	Pestilent Bloat	80	800	1280	0	u	
 10813	Pestilent Bloat	100	800	2400	0	u	
 8359	Pestilent Bloat	100	800	2000	0	u	
+16579	Pete Kayer	120	0	115	0		
+16588	Pete Kayer	120	0	115	0		
 10957	Phantom Hand	8	0	12	0		
 10958	Phantom Hand	8	0	12	0		
 12078	Phantom Muspah	200	261	850	0		bosses
+12074	Phantom Muspah	200	160	550	0		
 12080	Phantom Muspah	200	56	850	0		bosses
+12076	Phantom Muspah	200	0	550	0		
 12077	Phantom Muspah	200	56	850	0		bosses
+12073	Phantom Muspah	200	0	550	0		
 12079	Phantom Muspah	200	56	75	0		bosses
+12075	Phantom Muspah	200	0	75	0		
 12082	Phantom Muspah	200	56	850	0		bosses
+12081	Phantom Muspah	200	0	550	0		
 373	Pheasant	3	0	5	0		
 5500	Pheasant	3	0	5	0		
 374	Pheasant	3	0	5	0		
@@ -2004,7 +2051,7 @@
 8709	Shaeded Beast	50	50	210	0		
 4643	Shantay Guard	16	15	32	0		
 14860	Shellbane gryphon	120	60	400	0		bosses;gryphons
-15010	Shellbane gryphon (Troubled Tortugans)	120	60	400	0		
+15010	Shellbane gryphon	120	60	400	0		
 1702	Shifter	83	0	83	0		
 1694	Shifter	23	0	23	0		
 1696	Shifter	38	0	38	0		
@@ -2172,6 +2219,17 @@
 508	Soulless	18	0	24	0		
 10435	Sourhog	25	0	40	0		sourhogs
 10436	Sourhog (A Porcine of Interest)	25	0	40	0		
+16610	Sparring partner	99	0	1000	0		
+16608	Sparring partner	99	0	1000	0		
+16609	Sparring partner	99	0	1000	0		
+16607	Sparring partner	70	0	1000	0		
+16611	Sparring partner	99	0	99	0		
+16616	Sparring partner	99	0	99	0		
+16614	Sparring partner	99	0	99	0		
+16613	Sparring partner	99	0	99	0		
+16617	Sparring partner	99	0	99	0		
+16615	Sparring partner	99	0	99	0		
+16612	Sparring partner	99	0	99	0		
 5916	Spawn	10	0	15	0		
 8056	Spawn (Dragon Slayer II)	60	5	80	0		
 8714	Spawn of Sarachnis	50	20	30	0		spiders
@@ -2228,10 +2286,6 @@
 8064	Stone Guardian	138	40	62	0		
 8065	Stone Guardian	138	25	62	0		
 14706	Strange creature (Shadows of Custodia)	45	30	100	0		custodian stalker
-12063	Strange Creature	200	160	550	0		
-12076	Strange Creature	200	0	550	0		
-12073	Strange Creature	200	0	550	0		
-12075	Strange Creature	200	0	75	0		
 685	Stranger	80	82	80	0		
 12288	Strangled Bear	40	0	100	0		
 12289	Strangled Boar	40	0	40	0		
@@ -2320,6 +2374,7 @@
 9425	The Nightmare	150	600	2400	0		
 15168	The rocks	135	0	130	0		trolls
 4708	The Shaikahan	25	10000	100	0		
+16641	The Smorks	220	80	600	2		
 3475	The Untouchable	434	0	90	0		
 6121	The Untouchable (Nightmare Zone)	434	0	180	0		
 6352	The Untouchable (Nightmare Zone)	434	0	90	0		
@@ -2440,6 +2495,7 @@
 4652	Ugthanki	35	0	45	0		
 4500	Ulfric	82	0	60	0	u	skeletons
 11284	Umbra	200	25	500	-2		
+16670	Undead binder	225	20	95	0	u	
 2993	Undead chicken	1	-42	3	0	u	birds;zombies
 2992	Undead cow	1	-21	8	0	u	cows;zombies
 2145	Undead Druid	60	40	140	0	u	undead druids;zombies
@@ -2492,6 +2548,11 @@
 12224	Vardorvis	180	560	500	0		bosses
 7566	Vasa Nistirio	175	30	300	0		
 15576	Veiled kraken	115	0	225	15		
+16213	Venator (The Blood Moon Rises)	100	0	160	0		
+16214	Venator (The Blood Moon Rises)	100	0	160	0		
+16215	Venator (The Blood Moon Rises)	100	0	160	0		
+16216	Venator (The Blood Moon Rises)	100	0	160	0		
+16217	Venator (The Blood Moon Rises)	100	0	160	0		
 15765	Venator	120	100	345	0		vampyres;venators
 15766	Venator	120	100	345	0		vampyres;venators
 15767	Venator	120	100	345	0		vampyres;venators
@@ -2518,11 +2579,15 @@
 7399	Vitreous Jelly	220	0	190	0		jellies
 7400	Vitreous Warped Jelly	250	0	220	0		jellies
 3963	Viyeldi	70	0	80	0		
+16680	Void Augmenter	175	50	44	0		
 14179	Void Flare	100	0	140	0		
 2950	Void Knight (Pest Control)	50	100	200	0		
 2951	Void Knight (Pest Control)	50	100	200	0		
 2952	Void Knight (Pest Control)	50	100	200	0		
 2953	Void Knight (Pest Control)	50	100	200	0		
+16678	Void Rift	175	0	44	0		
+16679	Void Siphon	175	0	44	0		
+16681	Void Vine	0	0	44	0		
 11716	Volatile Baboon	20	-50	8	0		
 8058	Vorkath	164	80	460	0	u	blue dragons;bosses;zombies
 8059	Vorkath	214	26	750	0	u	blue dragons;bosses;zombies
@@ -2653,6 +2718,7 @@
 10768	Xarpus	100	100	3400	0		
 10772	Xarpus	200	160	6000	0		
 8340	Xarpus	250	160	5000	0		
+16684	Xarth	170	155	2600	0		
 2628	Yadviga	10	-21	60	0		
 5816	Yak	1	0	50	0		
 14176	Yama	225	333	2500	0		
@@ -3136,7 +3202,7 @@
 3697	Vampyre Juvenile	30	0	60	0		vampyres
 3698	Vampyre Juvinate	30	0	85	0		vampyres
 3699	Vampyre Juvinate	30	0	85	0		vampyres
-3708	Feral Vampyre	60	0	80	0		vampyres
+3708	Feral Vampyre	30	0	80	0		vampyres
 3713	Vyrewatch	85	0	90	0		vampyres
 3714	Vyrewatch	85	0	90	0		vampyres
 3715	Vyrewatch	85	0	105	0		vampyres
@@ -3727,6 +3793,9 @@
 10849	Verzik Vitur	20	20	2000	0		
 10851	Verzik Vitur	200	250	3500	0		
 10853	Verzik Vitur	150	230	3500	0		
+10858	Nylocas Ischyros	0	0	25	0		
+10859	Nylocas Toxobolos	0	0	25	0		
+10860	Nylocas Hagios	0	0	25	0		
 10865	Sotetseg	150	120	2240	0		
 10868	Sotetseg	200	150	4000	0		
 10888	Bat	5	0	8	0		bats
@@ -3809,8 +3878,6 @@
 12057	General Khazard	80	0	170	0		
 12058	General Khazard	80	0	170	0		
 12059	General Khazard	80	0	170	0		
-12074	Phantom Muspah	200	261	850	0		bosses
-12081	Phantom Muspah	200	56	850	0		bosses
 12084	Snake (desert)	3	0	6	0		
 12095	Clivet	4	0	25	0		
 12205	The Whisperer	250	300	900	0		bosses
@@ -3933,6 +4000,7 @@
 14856	Hermit crab	1	0	75	0		
 14858	Gryphon	50	60	110	0		gryphons
 14938	Seagull	1	-42	10	0		birds
+15009	Gryphon	50	60	110	0		gryphons
 15232	Mogre (sea)	40	0	59	0		mogres;ogres
 15440	Giant mosquito	45	0	3	0		
 15441	Leech	35	0	45	0		
@@ -3946,3 +4014,25 @@
 16330	Mountain troll	40	200	90	0		trolls
 16331	Mountain troll	40	200	90	0		trolls
 16332	Mountain troll	40	200	90	0		trolls
+16580	Pete Kayer	120	0	115	0		
+16581	Pete Kayer	120	0	115	0		
+16582	Pete Kayer	120	0	115	0		
+16583	Pete Kayer	120	0	115	0		
+16584	Pete Kayer	120	0	115	0		
+16585	Pete Kayer	120	0	115	0		
+16586	Pete Kayer	120	0	115	0		
+16589	Pete Kayer	120	0	115	0		
+16590	Pete Kayer	120	0	115	0		
+16591	Pete Kayer	120	0	115	0		
+16592	Pete Kayer	120	0	115	0		
+16593	Pete Kayer	120	0	115	0		
+16594	Pete Kayer	120	0	115	0		
+16595	Pete Kayer	120	0	115	0		
+16596	Pete Kayer	120	0	115	0		
+16644	Dagon'hai Elder	100	80	640	0		
+16646	Dagon'hai Monk	100	80	640	0		
+16648	Dagon'hai Monk	100	80	640	0		
+16674	Ocellus	215	50	2500	0		
+16676	Ocellus	250	80	1000	0		
+16836	Outlaw (Mudfoot's Big Adventure)	3	8	9	0		
+19597	Pete Kayer	120	0	115	0		
