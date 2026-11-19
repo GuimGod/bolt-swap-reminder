@@ -2364,9 +2364,9 @@
 6383	The Kendal (Nightmare Zone)	60	20	50	0		
 12214	The Leviathan	250	25	900	0		bosses
 12215	The Leviathan	200	25	720	0		bosses
-8363	The Maiden of Sugadinti	200	0	1050	0		
-8362	The Maiden of Sugadinti	200	0	1750	0		
-8361	The Maiden of Sugadinti	200	0	2450	0		
+8363	The Maiden of Sugadinti	200	0	3500	0		
+8362	The Maiden of Sugadinti	200	0	3500	0		
+8361	The Maiden of Sugadinti	200	0	3500	0		
 10814	The Maiden of Sugadinti	80	0	2000	0		
 10822	The Maiden of Sugadinti	200	0	3500	0		
 8360	The Maiden of Sugadinti	200	0	3500	0		
@@ -4036,3 +4036,175 @@
 16676	Ocellus	250	80	1000	0		
 16836	Outlaw (Mudfoot's Big Adventure)	3	8	9	0		
 19597	Pete Kayer	120	0	115	0		
+677	Goblin (historical)	4	0	12	0		
+678	Goblin (historical)	4	0	12	0		
+2194	Tok-Xil	60	0	40	0		
+3122	Tok-Xil	60	0	40	0		
+3124	Yt-MejKot	120	0	80	0		
+3126	Ket-Zek	240	0	160	0		
+3268	Woman (historical)	1	-21	7	0		
+3361	Guard (Deadman Mode)	300	8	800	0		
+6492	Kree'arra (PvM Arena)	260	200	255	0		
+6493	Commander Zilyana (PvM Arena)	300	100	255	0		
+6494	General Graardor (PvM Arena)	250	90	255	0		
+6495	K'ril Tsutsaroth (PvM Arena)	270	80	255	0		
+6496	Dagannoth Supreme (PvM Arena)	128	550	255	0		
+6497	Dagannoth Prime (PvM Arena)	255	10	255	0		
+6498	Dagannoth Rex (PvM Arena)	255	255	255	0		
+6499	Giant Mole (PvM Arena)	200	60	200	0		
+6500	Kalphite Queen (PvM Arena)	300	100	255	0		
+6501	Kalphite Queen (PvM Arena)	300	10	255	0		
+6502	King Black Dragon (PvM Arena)	240	70	240	0		
+6503	Callisto (PvM Arena)	440	230	255	0		
+6504	Venenatis (PvM Arena)	490	100	255	0		
+6505	Chaos Elemental (PvM Arena)	270	70	250	0		
+6506	TzTok-Jad (PvM Arena)	480	0	250	0		
+6574	Guard (Deadman Mode)	300	8	800	0		
+6575	Guard (Deadman Mode)	300	8	800	0		
+6576	Guard (Deadman Mode)	300	8	800	0		
+6579	Guard (Deadman Mode)	300	8	800	0		
+6580	Guard (Deadman Mode)	300	8	800	0		
+6581	Guard (Deadman Mode)	300	8	800	0		
+6582	Guard (Deadman Mode)	300	8	800	0		
+6583	Guard (Deadman Mode)	300	8	800	0		
+6595	Guard (Deadman Mode)	300	8	800	0		
+6698	Guard (Deadman Mode)	300	8	800	0		
+6699	Guard (Deadman Mode)	300	8	800	0		
+6700	Guard (Deadman Mode)	300	8	800	0		
+6701	Guard (Deadman Mode)	300	8	800	0		
+6702	Guard (Deadman Mode)	300	8	800	0		
+7544	Tekton	246	0	450	0		
+7545	Tekton	246	0	450	0		
+7549	Scavenger beast	67	0	45	0		
+7570	Guardian (Chambers of Xeric)	150	0	375	0		
+7572	Guardian (Chambers of Xeric)	150	0	375	0		
+7585	Ice demon	240	140	210	0		
+11199	Guard (Deadman Mode)	300	8	800	0		
+11200	Guard (Deadman Mode)	300	8	800	0		
+11201	Guard (Deadman Mode)	300	8	800	0		
+11202	Guard (Deadman Mode)	300	8	800	0		
+11203	Guard (Deadman Mode)	300	8	800	0		
+11204	Guard (Deadman Mode)	300	8	800	0		
+11205	Guard (Deadman Mode)	300	8	800	0		
+11206	Guard (Deadman Mode)	300	8	800	0		
+11207	Guard (Deadman Mode)	300	8	800	0		
+11208	Guard (Deadman Mode)	300	8	800	0		
+11209	Guard (Deadman Mode)	300	8	800	0		
+11210	Guard (Deadman Mode)	300	8	800	0		
+11211	Guard (Deadman Mode)	300	8	800	0		
+11976	Alomone	4	0	25	0		
+12092	Alomone	4	0	25	0		
+12093	Alomone	4	0	25	0		
+12094	Alomone	4	0	25	0		
+12193	Duke Sucellus	215	300	330	0		
+12194	Duke Sucellus	215	300	330	0		
+12460	Guard (Deadman Mode)	300	8	800	0		
+12461	Guard (Deadman Mode)	300	8	800	0		
+14012	The Hueycoatl	125	350	2500	0		
+14146	Black dragon (Echo)	200	0	190	0		
+15564	Zemouregal (Deadman)	125	15	500	0		
+15566	Guard (Deadman Mode)	300	8	800	0		
+15568	Guard (Deadman Mode)	300	8	800	0		
+15610	Black dragon (Echo)	200	0	190	0		
+15612	Cerberus (Echo)	115	70	1620	0		
+15616	Kalphite Queen (Echo)	300	65	561	0		
+15617	Kalphite Queen (Echo)	300	10	561	0		
+16653	Animated Sword	115	0	120	0		
+16660	Archive Guardian	260	50	1100	0		
+16661	Inert Guardian (Wall)	50	0	150	0		
+16662	Inert Guardian (Wall)	50	0	150	0		
+16883	Leech (A Shell of a Friend)	1	0	25	0		
+16885	SnelmLover500	35	0	35	0		
+16889	Sir Loin	40	75	65	0		
+16890	Fermenter of chaos	30	0	60	0		
+16891	Goblin meat tenderiser	30	0	50	0		
+16892	Gardener of Armadyl	50	55	90	0		
+16893	Bandit cactus cultivator	50	0	50	0		
+16912	Skeletal Horror	50	120	300	0		
+16913	Skeletal Horror	50	120	300	0		
+16917	Shade	60	0	90	-3	u	
+16919	Ancient Banshee	60	15	120	0		
+8364	The Maiden of Sugadinti	200	0	3500	0		
+8365	The Maiden of Sugadinti	200	0	3500	0		
+10823	The Maiden of Sugadinti	200	0	3500	0		
+10824	The Maiden of Sugadinti	200	0	3500	0		
+10825	The Maiden of Sugadinti	200	0	3500	0		
+10826	The Maiden of Sugadinti	200	0	3500	0		
+10827	The Maiden of Sugadinti	200	0	3500	0		
+33	Zombie	10	0	22	0	u	zombies
+35	Zombie	10	0	22	0	u	zombies
+36	Zombie	10	0	22	0	u	zombies
+53	Zombie	16	11	30	0	u	zombies
+94	Ghost	18	5	25	0	u	ghosts
+96	Ghost	18	5	25	0	u	ghosts
+98	Ghost	18	5	25	0	u	ghosts
+116	Wolf	22	0	34	0		wolves
+117	Wolf	22	0	34	0		wolves
+231	Wolf	22	0	34	0		wolves
+674	Goblin (Goblin Village)	4	0	12	0		goblins
+3010	Guard	14	25	22	0		
+3011	Guard	14	25	22	0		
+3047	Goblin (Goblin Village)	4	0	12	0		goblins
+3048	Goblin (Goblin Village)	4	0	12	0		goblins
+3272	Guard (Hosidius)	16	5	22	0		
+4594	Rat	1	-42	2	0		rats
+4678	Mercenary	39	19	60	0		
+8081	Brutal green dragon	168	10	175	0		
+8922	Iorwerth Warrior	80	50	105	0		elves
+8923	Iorwerth Archer	80	70	105	0		elves
+9611	Mutated Bloodveld	30	0	170	0		bloodveld
+10498	Chicken	1	-42	3	0		birds
+10499	Chicken	1	-42	3	0		birds
+10815	The Maiden of Sugadinti	80	0	2000	0		
+10816	The Maiden of Sugadinti	80	0	2000	0		
+10817	The Maiden of Sugadinti	80	0	2000	0		
+10818	The Maiden of Sugadinti	80	0	2000	0		
+10819	The Maiden of Sugadinti	80	0	2000	0		
+10861	Nylocas Athanatos	50	0	180	0		
+11169	Vyrewatch	85	0	90	0		vampyres
+11170	Vyrewatch	85	0	90	0		vampyres
+11171	Vyrewatch	85	0	90	0		vampyres
+11172	Vyrewatch	85	0	90	0		vampyres
+11493	Menaphite Akh	140	180	480	0		
+11509	Scarab Swarm	30	90	25	0		scabarites
+11894	Paladin	54	79	57	0		
+12594	Jal-ImKot	120	50	75	0		tzhaar
+12607	Lava dragon	220	20	230	0		lava dragons
+12608	Lava dragon	220	20	230	0		lava dragons
+12737	Armoured zombie (Zemouregal's Base)	68	10	75	1	u	zombies
+12756	Armoured zombie (Zemouregal's Base)	68	10	75	1	u	zombies
+12759	Armoured zombie (Zemouregal's Base)	68	10	75	1	u	zombies
+12760	Armoured zombie (Zemouregal's Base)	68	10	75	1	u	zombies
+12762	Armoured zombie (Zemouregal's Base)	68	10	75	1	u	zombies
+13010	Green dragon	68	10	75	0		green dragons
+13488	Green dragon	68	10	75	0		green dragons
+13603	Tormented Demon	150	90	600	0		greater demons
+13604	Tormented Demon	150	90	600	0		greater demons
+13605	Tormented Demon	150	90	600	0		greater demons
+13606	Tormented Demon	150	90	600	0		greater demons
+13624	Rat	1	-42	2	0		rats
+14155	Pirate	20	0	20	0		pirates
+14156	Pirate	20	0	20	0		pirates
+14207	Imp	1	-42	8	0		
+14233	Imp	1	-42	8	0		
+14401	Emissary Brawler	70	30	35	0		
+14402	Emissary Brawler	70	30	35	0		
+14403	Emissary Brawler	70	30	55	0		
+14404	Emissary Brawler	70	30	55	0		
+14814	Revenant imp	4	0	10	0	u	ghosts;revenants
+14864	Revenant goblin	14	31	14	0	u	ghosts;revenants
+14865	Revenant pyrefiend	33	10	48	0	u	ghosts;revenants
+15178	Revenant hobgoblin	41	20	72	0	u	ghosts;revenants
+15179	Revenant cyclops	49	95	110	0	u	ghosts;revenants
+15180	Revenant hellhound	80	140	80	0	u	ghosts;revenants
+15181	Revenant demon	80	90	80	0	u	ghosts;revenants
+15182	Revenant ork	60	118	105	0	u	ghosts;revenants
+15183	Revenant dark beast	80	118	140	0	u	ghosts;revenants
+15184	Revenant knight	80	150	143	0	u	ghosts;revenants
+15185	Revenant dragon	87	157	155	0	u	ghosts;revenants
+15976	Nylocas Ischyros	1	0	2	0		
+15977	Nylocas Toxobolos	1	0	2	0		
+15978	Nylocas Hagios	1	0	2	0		
+15994	Blood spawn	0	0	7	0		
+16143	Acidic Bloodveld	2	-100	5	0		
+16597	Pete Kayer	120	0	115	0		

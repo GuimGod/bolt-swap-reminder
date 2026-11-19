@@ -14,7 +14,8 @@ import org.junit.Test;
 /**
  * Every form a monster is fought in has its row (GitHub issue #1: Vorkath awake, the Demonic gorillas, each phase of the
  * Alchemical Hydra). NPC ids: OSRS Wiki infoboxes (Bucket table infobox_monster, read 2026-11-19); numbers: the OSRS Wiki DPS
- * calculator's monster data of 2026-11-11.
+ * calculator's monster data of 2026-11-11, then the wiki's infoboxes for forms the calculator
+ * has no version for, then the game cache of 2026-11-18 for NPCs defined as the same fight.
  */
 public class MonsterIdsTest
 {
@@ -50,11 +51,18 @@ public class MonsterIdsTest
 	public void aFormWithOtherNumbersIsNeverTakenForAnother() throws Exception
 	{
 		BoltData data = new BoltData();
-		// forms the calculator has no row for are left out, not given the numbers of a form of the same name (OSRS Wiki:
-		// Tekton (Challenge Mode) 246 Defence and 450 hitpoints, Callisto in the PvM Arena 440 and 255, the Deadman bosses)
-		assertNull(data.monster(7545));
-		assertNull(data.monster(6503));
+		// forms the calculator has no row for take the OSRS Wiki's own numbers for them, never those of another form of
+		// the same name: Tekton (Challenge Mode) 246 Defence and 450 hitpoints, Callisto in the PvM Arena 440 and 255
+		is(data, 7545, "Tekton", 246, 450);
+		is(data, 6503, "Callisto (PvM Arena)", 440, 255);
+		// the Archive Guardian on the ground (Fractured Archive): 1100 hitpoints, heavy ranged defence 50
+		is(data, 16660, "Archive Guardian", 260, 1100);
+		assertEquals(50, data.monster(16660).heavyDefence);
+		// a form one id has in several modes with other numbers (the Deadman bosses) is left out, not guessed
 		assertNull(data.monster(12439));
+		// an NPC the game defines as the same fight as a listed one (the Lava dragons of 6593)
+		is(data, 12607, "Lava dragon", 220, 230);
+		is(data, 12608, "Lava dragon", 220, 230);
 		// the quest's Phantom Muspah (Secrets of the North) is not the boss: 550 hitpoints, heavy ranged defence 160 in
 		// the melee form, 0 in the teleporting one
 		is(data, 12074, "Phantom Muspah", 200, 550);
@@ -67,6 +75,23 @@ public class MonsterIdsTest
 		is(data, 3708, "Feral Vampyre", 30, 80);
 		// the Giant Rock Crab of the Tonali Cavern: heavy ranged defence 250
 		assertEquals(250, data.monster(14424).heavyDefence);
+	}
+
+	@Test
+	public void theMaidenKeepsHerMostHealthInEveryForm() throws Exception
+	{
+		BoltData data = new BoltData();
+		// she changes id at 70, 50 and 30% of her health; the bar is a fraction of her most (3500), so every form has it
+		for (int npc : new int[]{8360, 8361, 8362, 8363, 8364, 8365})
+		{
+			is(data, npc, "The Maiden of Sugadinti", 200, 3500);
+		}
+		// Hard Mode: the later ids too
+		for (int npc = 10822; npc <= 10827; npc++)
+		{
+			is(data, npc, "The Maiden of Sugadinti", 200, 3500);
+		}
+		assertEquals(3500, BoltSwapReminderPlugin.healthNow(data.monster(8363).hitpoints, 15, 30) * 2);
 	}
 
 	@Test
