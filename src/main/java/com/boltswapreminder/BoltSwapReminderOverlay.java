@@ -47,8 +47,8 @@ class BoltSwapReminderOverlay extends Overlay
 		graphics.setFont(FontManager.getRunescapeFont());
 		FontMetrics fm = graphics.getFontMetrics();
 		BufferedImage icon = itemManager.getImage(reminder.itemId);
-		// bolts that are in the quiver, under the ones in the slot: taking the slot's off switches to them
-		String text = reminder.inQuiver ? reminder.text + " (quiver)" : reminder.text;
+		// bolts that are in the quiver, under the ones in the slot: taking the slot's off switches to them; or in the bolt pouch
+		String text = reminder.inQuiver ? reminder.text + " (quiver)" : reminder.inPouch ? reminder.text + " (pouch)" : reminder.text;
 		int iconW = icon == null ? 0 : icon.getWidth() * ICON_H / Math.max(1, icon.getHeight());
 		int h = Math.max(ICON_H, fm.getHeight()) + 2 * PAD;
 		int w = PAD + iconW + (iconW > 0 ? PAD : 0) + fm.stringWidth(text) + PAD;

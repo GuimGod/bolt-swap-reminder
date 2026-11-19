@@ -23,6 +23,7 @@ import net.runelite.api.Skill;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.gameval.DBTableID;
 import net.runelite.api.gameval.InventoryID;
+import net.runelite.api.gameval.ItemID;
 import net.runelite.api.gameval.VarPlayerID;
 import net.runelite.api.gameval.VarbitID;
 import net.runelite.client.config.ConfigManager;
@@ -70,15 +71,36 @@ public class BoltSwapReminderPlugin extends Plugin
 		final boolean better;
 		/** True when those bolts are in Dizana's quiver, under the ones in the ammunition slot: taking these off switches. */
 		final boolean inQuiver;
+		/** True when those bolts are in the bolt pouch: the pouch is what the inventory outlines. */
+		final boolean inPouch;
 
 		Reminder(int itemId, String text, boolean better, boolean inQuiver)
+		{
+			this(itemId, text, better, inQuiver, false);
+		}
+
+		Reminder(int itemId, String text, boolean better, boolean inQuiver, boolean inPouch)
 		{
 			this.itemId = itemId;
 			this.text = text;
 			this.better = better;
 			this.inQuiver = inQuiver;
+			this.inPouch = inPouch;
+		}
+
+		/** The item the inventory outlines: the bolts, or the bolt pouch that holds them. */
+		int markedItem()
+		{
+			return inPouch ? ItemID.XBOWS_BOLT_POUCH : itemId;
 		}
 	}
+
+	/** The game's table of the bolt pouch's bolt types: each slot holds an index into it (client script 4047). */
+	static final int BOLT_POUCH_TYPES = 336;
+	private static final int[] POUCH_TYPE = {VarbitID.XBOWS_POUCH_SLOT1, VarbitID.XBOWS_POUCH_SLOT2,
+		VarbitID.XBOWS_POUCH_SLOT3, VarbitID.XBOWS_POUCH_SLOT4};
+	private static final int[] POUCH_AMOUNT = {VarbitID.XBOWS_POUCH_NUM1, VarbitID.XBOWS_POUCH_NUM2,
+		VarbitID.XBOWS_POUCH_NUM3, VarbitID.XBOWS_POUCH_NUM4};
 
 	@Inject
 	private Client client;
@@ -261,6 +283,14 @@ public class BoltSwapReminderPlugin extends Plugin
 				break;
 			}
 		}
+		// the other kind in the bolt pouch, which swaps it in from the Worn Equipment tab; with Dizana's quiver on the
+		// player the pouch does not swap (OSRS Wiki, Bolt pouch), so then it does not count
+		boolean inPouch = false;
+		if (carried == -1 && !none && pouchSwaps(names(worn), names(inventory)))
+		{
+			carried = pouchBolts(otherKind);
+			inPouch = carried != -1;
+		}
 		if (carried == -1)
 		{
 			// only one kind carried and none on: those are the bolts to put on
@@ -334,7 +364,64 @@ public class BoltSwapReminderPlugin extends Plugin
 			return gain >= 0 ? new Reminder(carried, label(otherKind, gainText(gain)), true, false)
 				: new Reminder(ammoId, label(wornKind, gainText(BoltCalc.gain(other, now))), true, false);
 		}
-		return new Reminder(carried, label(otherKind, gainText(gain)), gain >= MINIMUM_GAIN, inQuiver);
+		return new Reminder(carried, label(otherKind, gainText(gain)), gain >= MINIMUM_GAIN, inQuiver, inPouch);
+	}
+
+	/** The names of a container's items, null for an empty slot. */
+	private String[] names(ItemContainer container)
+	{
+		Item[] items = container.getItems();
+		String[] out = new String[items.length];
+		for (int i = 0; i < items.length; i++)
+		{
+			out[i] = items[i] == null || items[i].getId() <= 0 ? null : name(items[i].getId());
+		}
+		return out;
+	}
+
+	/**
+	 * Whether the bolt pouch can swap bolts in: it is in the inventory, and Dizana's quiver (any of its kinds) is neither
+	 * worn nor carried, since with the quiver on the player the pouch cannot change the ammunition (OSRS Wiki, Bolt pouch).
+	 */
+	static boolean pouchSwaps(String[] worn, String[] inventory)
+	{
+		boolean pouch = false;
+		for (String[] names : new String[][]{worn, inventory})
+		{
+			for (String n : names)
+			{
+				String lower = n == null ? "" : n.toLowerCase(Locale.ROOT);
+				if (lower.contains("dizana's quiver"))
+				{
+					return false;
+				}
+				pouch |= names == inventory && lower.equals("bolt pouch");
+			}
+		}
+		return pouch;
+	}
+
+	/** The bolts of this kind in the bolt pouch's four slots, as an item id; -1 for none. */
+	private int pouchBolts(BoltCalc.Bolt kind)
+	{
+		var types = client.getEnum(BOLT_POUCH_TYPES);
+		if (types == null)
+		{
+			return -1;
+		}
+		for (int i = 0; i < POUCH_TYPE.length; i++)
+		{
+			if (client.getVarbitValue(POUCH_AMOUNT[i]) <= 0)
+			{
+				continue;
+			}
+			int item = types.getIntValue(client.getVarbitValue(POUCH_TYPE[i]));
+			if (item > 0 && kind(name(item)) == kind)
+			{
+				return itemManager.canonicalize(item);
+			}
+		}
+		return -1;
 	}
 
 	/** Whether the monster last attacked on {@code lastAttack} is still the one being fought on {@code tick}. */

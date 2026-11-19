@@ -32,7 +32,7 @@ class BoltInventoryOverlay extends WidgetItemOverlay
 	public void renderItemOverlay(Graphics2D graphics, int itemId, WidgetItem widgetItem)
 	{
 		BoltSwapReminderPlugin.Reminder reminder = plugin.reminder();
-		if (reminder == null || !reminder.better || !config.markInventory() || itemManager.canonicalize(itemId) != reminder.itemId)
+		if (reminder == null || !reminder.better || !config.markInventory() || itemManager.canonicalize(itemId) != reminder.markedItem())
 		{
 			return;
 		}
