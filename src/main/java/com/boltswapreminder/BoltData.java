@@ -52,9 +52,21 @@ final class BoltData
 			}
 			slayer = Collections.unmodifiableSet(categories);
 		}
+
+		/** Whether the two rows give a crossbow the same fight: same defence, hitpoints, armour, undead and categories. */
+		boolean sameFight(Monster o)
+		{
+			return defenceLevel == o.defenceLevel && heavyDefence == o.heavyDefence && hitpoints == o.hitpoints
+				&& flatArmour == o.flatArmour && undead == o.undead && slayer.equals(o.slayer);
+		}
 	}
 
+	/** Stands for a name whose rows differ (Vorkath in Dragon Slayer II and after it): such a name is never guessed. */
+	private static final Monster DIFFERENT = new Monster(new String[]{"", "", "0", "0", "0"});
+
 	private final Map<Integer, Monster> monsters = new HashMap<>();
+	/** By the name in lower case: the one fight every row of that name gives, or {@link #DIFFERENT}. */
+	private final Map<String, Monster> byName = new HashMap<>();
 	private final Set<String> categories = new HashSet<>();
 
 	BoltData() throws IOException
@@ -74,6 +86,7 @@ final class BoltData
 					Monster m = new Monster(line.split("\t", -1));
 					monsters.put(Integer.parseInt(line.substring(0, line.indexOf('\t'))), m);
 					categories.addAll(m.slayer);
+					byName.merge(m.name.toLowerCase(Locale.ROOT), m, (a, b) -> a.sameFight(b) ? a : DIFFERENT);
 				}
 			}
 		}
@@ -82,6 +95,21 @@ final class BoltData
 	Monster monster(int npcId)
 	{
 		return monsters.get(npcId);
+	}
+
+	/**
+	 * The monster by its NPC id; an id the table does not list (a form the OSRS Wiki has not listed yet) falls back on
+	 * the name, but only when every row of that name gives the same fight. Null when neither finds it.
+	 */
+	Monster monster(int npcId, String name)
+	{
+		Monster m = monsters.get(npcId);
+		if (m != null || name == null)
+		{
+			return m;
+		}
+		Monster named = byName.get(name.toLowerCase(Locale.ROOT));
+		return named == DIFFERENT ? null : named;
 	}
 
 	/**
