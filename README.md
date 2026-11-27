@@ -12,6 +12,7 @@ With a crossbow in hand and no bolts on at all, the bolts to put on are shown th
 - The crossbow: a Zaryte crossbow makes both effects stronger.
 - The Kandarin hard diary, which makes either effect a tenth more likely.
 - The monster's defence against crossbows and its hitpoints, from a bundled table, and its health from the bar the game draws.
+- The monster's Defence **after special attacks**: a Bandos godsword, Dragon warhammer, Elder maul, Arclight or Emberlight, Accursed sceptre, Bone dagger, Dorgeshuun crossbow or Barrelchest anchor that lands lowers it, each one from what the one before left, never below the monster's floor, and it comes back with time. Your own special attacks are read from the game; your party's come through RuneLite's Special Attack Counter (it must be on for them and for you, in the same party). The rules are the Combat Check plugin's, checked against the OSRS Wiki DPS calculator. A fight immune to drains (the awakened Desert Treasure II bosses, the Moons of Peril, Demonic Brutus) keeps its Defence, and a monster that changes into a form with another Defence starts again from it.
 - An imbued Slayer helmet on a monster of your task, and a Salve amulet (i) or (ei) against the undead.
 
 The two effects, as the OSRS Wiki gives them:
@@ -44,7 +45,7 @@ The other bolts are pointed out as soon as they deal more, by any margin and wit
 - Ruby and diamond bolts (e) only. The other enchanted bolts are not compared.
 - The monster must be in the bundled table, and you must be attacking it.
 - The health comes from the health bar, which the game gives in steps: on a monster with a lot of hitpoints it is off by a few. Right at the point where the two bolts tie the reminder may come and go for a moment.
-- Not counted: the health the ruby effect costs you, special attacks, and a monster that changes its defence during the fight.
+- Not counted: the health the ruby effect costs you; special attacks of players outside your party; the Tonalztics of Ralos' drain (the table has no Magic level); on the Alchemical Hydra, the damage its shield takes off a Bandos godsword hit (the drain counted is the hitsplat's); the Pestilent Bloat's stomp and the Wardens' enrage, which give the Defence back; and a party member's special attack on a monster outside your view.
 
 ## Data
 

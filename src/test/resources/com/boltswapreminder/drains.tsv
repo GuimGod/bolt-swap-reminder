@@ -1,0 +1,63 @@
+# case	npc id	name	demon (1)	defence	magic	magic defence	accursed	elderMaul	dwh	arclight	emberlight	tonalztic	seercull	bgs	ayak	defence left	magic left	magic defence left (- not checked)	Chambers of Xeric party size (0 for no scaling; defence and magic are then the scaled ones)	Challenge Mode (1)
+tekton-none	7540	Tekton	0	205	205	0	0	0	0	0	0	0	0	0	0	205	205	0	0	0
+tekton-elder-maul-1	7540	Tekton	0	205	205	0	0	1	0	0	0	0	0	0	0	134	205	0	0	0
+tekton-elder-maul-2	7540	Tekton	0	205	205	0	0	2	0	0	0	0	0	0	0	88	205	0	0	0
+tekton-elder-maul-2-bgs-60	7540	Tekton	0	205	205	0	0	2	0	0	0	0	0	60	0	28	205	0	0	0
+tekton-dwh-3	7540	Tekton	0	205	205	0	0	0	3	0	0	0	0	0	0	71	205	0	0	0
+tekton-elder-maul-1-dwh-1-bgs-25	7540	Tekton	0	205	205	0	0	1	1	0	0	0	0	25	0	69	205	0	0	0
+tekton-bgs-300	7540	Tekton	0	205	205	0	0	0	0	0	0	0	0	300	0	0	205	0	0	0
+tekton-tonalztic-2	7540	Tekton	0	205	205	0	0	0	0	0	0	2	0	0	0	155	205	0	0	0
+graardor-dwh-1	2215	General Graardor	0	250	80	298	0	0	1	0	0	0	0	0	0	175	80	298	0	0
+graardor-dwh-5	2215	General Graardor	0	250	80	298	0	0	5	0	0	0	0	0	0	43	80	298	0	0
+graardor-elder-maul-3	2215	General Graardor	0	250	80	298	0	3	0	0	0	0	0	0	0	69	80	298	0	0
+graardor-arclight-3	2215	General Graardor	0	250	80	298	0	0	0	3	0	0	0	0	0	211	80	298	0	0
+graardor-emberlight-2	2215	General Graardor	0	250	80	298	0	0	0	0	2	0	0	0	0	224	80	298	0	0
+graardor-bgs-400	2215	General Graardor	0	250	80	298	0	0	0	0	0	0	0	400	0	0	80	298	0	0
+graardor-accursed	2215	General Graardor	0	250	80	298	1	0	0	0	0	0	0	0	0	212	68	298	0	0
+graardor-accursed-dwh-1-bgs-20	2215	General Graardor	0	250	80	298	1	0	1	0	0	0	0	20	0	129	68	298	0	0
+graardor-seercull-30	2215	General Graardor	0	250	80	298	0	0	0	0	0	0	30	0	0	250	50	298	0	0
+graardor-ayak-40	2215	General Graardor	0	250	80	298	0	0	0	0	0	0	0	0	40	250	80	258	0	0
+graardor-ayak-500	2215	General Graardor	0	250	80	298	0	0	0	0	0	0	0	0	500	250	80	0	0	0
+kril-arclight-2	3129	K'ril Tsutsaroth	1	270	200	80	0	0	0	2	0	0	0	0	0	214	200	80	0	0
+kril-emberlight-3	3129	K'ril Tsutsaroth	1	270	200	80	0	0	0	0	3	0	0	0	0	147	200	80	0	0
+kril-dwh-2-arclight-1-bgs-30	3129	K'ril Tsutsaroth	1	270	200	80	0	0	2	1	0	0	0	30	0	75	200	80	0	0
+abyssal-demon-emberlight-1	415	Abyssal demon	1	135	1	0	0	0	0	0	1	0	0	0	0	114	1	0	0	0
+corp-elder-maul-2-tonalztic-4	319	Corporeal Beast	0	310	350	150	0	2	0	0	0	4	0	0	0	0	350	150	0	0
+corp-tonalztic-3-seercull-50	319	Corporeal Beast	0	310	350	150	0	0	0	0	0	3	50	0	0	181	300	150	0	0
+nex-dwh-1	11278	Nex	0	260	230	300	0	0	1	0	0	0	0	0	0	250	230	300	0	0
+nex-bgs-60	11278	Nex	0	260	230	300	0	0	0	0	0	0	0	60	0	250	230	300	0	0
+yama-elder-maul-2	14176	Yama	1	225	250	60	0	2	0	0	0	0	0	0	0	145	250	60	0	0
+araxxor-dwh-3	13668	Araxxor	0	135	190	237	0	0	3	0	0	0	0	0	0	90	190	237	0	0
+akkha-bgs-5	11789	Akkha	0	80	100	10	0	0	0	0	0	0	0	5	0	75	100	10	0	0
+nightmare-dwh-4	9425	The Nightmare	0	150	150	600	0	0	4	0	0	0	0	0	0	120	150	600	0	0
+vardorvis-dwh-2	12223	Vardorvis	0	215	215	580	0	0	2	0	0	0	0	0	0	215	215	580	0	0
+vetion-elder-maul-1-bgs-100	6611	Vet'ion	0	395	300	250	0	1	0	0	0	0	0	100	0	157	300	250	0	0
+abyssal-demon-bgs-400	415	Abyssal demon	1	135	1	0	0	0	0	0	0	0	0	400	0	0	0	0	0	0
+graardor-arclight-2-bgs-900	2215	General Graardor	0	250	80	298	0	0	0	2	0	0	0	900	0	0	0	298	0	0
+graardor-bgs-1100	2215	General Graardor	0	250	80	298	0	0	0	0	0	0	0	1100	0	0	0	298	0	0
+kq-elder-maul-1	963	Kalphite Queen	0	300	150	100	0	1	0	0	0	0	0	0	0	195	150	100	0	0
+kq-bgs-30	963	Kalphite Queen	0	300	150	100	0	0	0	0	0	0	0	30	0	270	150	100	0	0
+kq-bgs-50	963	Kalphite Queen	0	300	150	100	0	0	0	0	0	0	0	50	0	250	150	100	0	0
+kq-dwh-1-bgs-50	963	Kalphite Queen	0	300	150	100	0	0	1	0	0	0	0	50	0	160	150	100	0	0
+kq-accursed-elder-maul-1	963	Kalphite Queen	0	300	150	100	1	1	0	0	0	0	0	0	0	166	127	100	0	0
+kq-seercull-30	963	Kalphite Queen	0	300	150	100	0	0	0	0	0	0	30	0	0	300	120	100	0	0
+muspah-elder-maul-1	12077	Phantom Muspah	0	200	150	437	0	1	0	0	0	0	0	0	0	130	150	437	0	0
+doom-bgs-20	14707	Doom of Mokhaiotl	1	90	275	160	0	0	0	0	0	0	0	20	0	70	275	160	0	0
+fragment-of-seren-bgs-30	8917	Fragment of Seren	0	102	102	10	0	0	0	0	0	0	0	30	0	72	-	-	0	0
+menaphite-akh-bgs-20	11492	Menaphite Akh	0	140	150	280	0	0	0	0	0	0	0	20	0	120	150	280	0	0
+galvek-dwh-1	8094	Galvek	0	188	160	280	0	0	1	0	0	0	0	0	0	132	160	280	0	0
+hydra-bgs-68	8615	Alchemical Hydra	0	100	260	150	0	0	0	0	0	0	0	68	0	32	260	150	0	0
+tekton-cm-24	7540	Tekton	0	332	332	0	0	0	0	0	0	0	0	0	0	332	332	0	24	1
+tekton-cm-24-elder-maul-2	7540	Tekton	0	332	332	0	0	2	0	0	0	0	0	0	0	141	332	0	24	1
+tekton-cm-3-elder-maul-1-bgs-1000	7540	Tekton	0	250	250	0	0	1	0	0	0	0	0	1000	0	0	250	0	3	1
+tekton-12-dwh-2	7540	Tekton	0	225	225	0	0	0	2	0	0	0	0	0	0	111	225	0	12	0
+mystic-cm-24-dwh-2	7604	Skeletal Mystic	0	336	316	140	0	0	2	0	0	0	0	0	0	166	316	140	24	1
+mystic-cm-32-accursed-tonalztic-2	7604	Skeletal Mystic	0	352	348	140	1	0	0	0	0	2	0	0	0	227	295	140	32	1
+olm-mage-hand-cm-24-tonalztic-2	7550	Great Olm	0	315	157	50	0	0	0	0	0	2	0	0	0	277	157	50	24	1
+olm-head-cm-24-bgs-200	7551	Great Olm	0	270	565	200	0	0	0	0	0	0	0	200	0	70	565	200	24	1
+vespula-12-seercull-20	7530	Vespula	0	96	96	70	0	0	0	0	0	0	20	0	0	96	76	70	12	0
+crystal-cm-32-dwh-1	7568	Glowing crystal	0	126	249	0	0	0	1	0	0	0	0	0	0	89	249	0	32	1
+guardian-cm-24-bgs-1500	7569	Guardian (Chambers of Xeric)	0	180	1	0	0	0	0	0	0	0	0	1500	0	0	0	0	24	1
+scavenger-cm-5-accursed	7548	Scavenger beast	0	67	1	0	1	0	0	0	0	0	0	0	0	56	0	0	5	1
+vanguard-magic-cm-32-elder-maul-15	7529	Vanguard	0	301	373	110	0	15	0	0	0	0	0	0	0	2	373	110	32	1
+vasa-cm-16-emberlight-3-ayak-30	7566	Vasa Nistirio	0	295	468	400	0	0	0	0	3	0	0	0	30	250	468	370	16	1

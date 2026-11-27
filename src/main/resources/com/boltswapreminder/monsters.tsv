@@ -1,23 +1,23 @@
-# npc id	name	defence level	heavy ranged defence	hitpoints	flat armour	undead (u)	slayer categories separated by ;
+# npc id	name	defence level	heavy ranged defence	hitpoints	flat armour	undead (u), demon (d)	slayer categories separated by ;
 15165	A corpse	90	0	90	0		zombies
 3477	A Doubt	85	0	59	0		
 2	Aberrant spectre	90	15	90	0	u	aberrant spectres
 7402	Abhorrent spectre	180	30	250	0	u	aberrant spectres
 8260	Abomination	110	180	200	0		
 12372	Abyssal antibody	1	0	50	0		
-7241	Abyssal demon	135	20	150	0		abyssal demons
-415	Abyssal demon	135	20	150	0		abyssal demons
-11239	Abyssal demon	135	20	150	0		abyssal demons
+7241	Abyssal demon	135	20	150	0	d	abyssal demons
+415	Abyssal demon	135	20	150	0	d	abyssal demons
+11239	Abyssal demon	135	20	150	0	d	abyssal demons
 2585	Abyssal guardian	30	0	50	0		
 2584	Abyssal leech	25	0	10	0		
 12393	Abyssal leech (The Scar)	1	10	50	0		
 12366	Abyssal leech (The Scar)	1	0	30	0		
 12391	Abyssal leech (The Scar)	30	10	20	0		
 7533	Abyssal portal	176	110	250	0		
-5886	Abyssal Sire	250	60	425	0		abyssal demons;bosses
-5889	Abyssal Sire	250	60	425	0		abyssal demons;bosses
-5891	Abyssal Sire	250	60	425	0		abyssal demons;bosses
-5908	Abyssal Sire	250	30	425	0		abyssal demons;bosses
+5886	Abyssal Sire	250	60	425	0	d	abyssal demons;bosses
+5889	Abyssal Sire	250	60	425	0	d	abyssal demons;bosses
+5891	Abyssal Sire	250	60	425	0	d	abyssal demons;bosses
+5908	Abyssal Sire	250	30	425	0	d	abyssal demons;bosses
 2586	Abyssal walker	95	0	95	0		
 12392	Abyssal walker (The Scar)	95	75	120	0		
 12394	Abyssal walker (The Scar)	20	75	120	0		
@@ -31,9 +31,9 @@
 1293	Afflicted	40	0	30	0		
 11727	Agile Scarab	5	0	30	0		
 13483	Agile Warrior	80	0	30	0		
-911	Agrith Naar	82	0	95	0		
-6327	Agrith Naar (Nightmare Zone)	82	0	209	0		
-6388	Agrith Naar (Nightmare Zone)	82	0	95	0		
+911	Agrith Naar	82	0	95	0	d	
+6327	Agrith Naar (Nightmare Zone)	82	0	209	0	d	
+6388	Agrith Naar (Nightmare Zone)	82	0	95	0	d	
 4880	Agrith-Na-Na	82	60	200	0		
 6308	Agrith-Na-Na (Nightmare Zone)	82	60	255	0		
 6369	Agrith-Na-Na (Nightmare Zone)	82	60	200	0		
@@ -165,7 +165,7 @@
 3181	Aviansie	115	0	75	0		aviansie
 3174	Aviansie	100	0	98	0		aviansie
 3182	Aviansie	115	0	79	0		aviansie
-7288	Awakened Altar	1	0	100	0		
+7288	Awakened Altar	1	0	100	0	d	
 11778	Ba-Ba	80	120	380	0		
 11781	Baboon	50	50	10	0		
 11709	Baboon Brawler	12	900	25	0		
@@ -198,7 +198,7 @@
 13530	Balance Elemental	275	-40	750	0		
 13529	Balance Elemental	275	-40	750	0		
 13528	Balance Elemental	275	-40	750	0		
-3132	Balfrug Kreeyath	153	0	161	0		black demons
+3132	Balfrug Kreeyath	153	0	161	0	d	black demons
 695	Bandit (Bandit Camp)	50	0	50	0		
 690	Bandit (Bandit Camp)	65	0	65	0		
 736	Bandit (Pollnivneach)	20	0	30	0		
@@ -268,14 +268,14 @@
 5241	Bird	5	0	5	0		birds
 2839	Black bear	13	0	25	0		bears
 2912	Black chinchompa (Hunter)	2	0	1	0		
-6295	Black demon (Nightmare Zone)	152	0	255	0		black demons
-6357	Black demon (Nightmare Zone)	152	0	157	0		black demons
-1432	Black demon (The Grand Tree)	152	0	157	0		black demons
-12385	Black demon (The Scar)	152	0	157	0		black demons
-240	Black demon	152	0	157	0		black demons
-7243	Black demon	175	0	160	0		black demons
-7242	Black demon	162	0	170	0		black demons
-7874	Black demon	152	0	200	0		black demons
+6295	Black demon (Nightmare Zone)	152	0	255	0	d	black demons
+6357	Black demon (Nightmare Zone)	152	0	157	0	d	black demons
+1432	Black demon (The Grand Tree)	152	0	157	0	d	black demons
+12385	Black demon (The Scar)	152	0	157	0	d	black demons
+240	Black demon	152	0	157	0	d	black demons
+7243	Black demon	175	0	160	0	d	black demons
+7242	Black demon	162	0	170	0	d	black demons
+7874	Black demon	152	0	200	0	d	black demons
 252	Black dragon	200	10	190	0		black dragons
 7861	Black dragon	200	10	250	0		black dragons
 15025	Black Eye Bethel	56	20	180	0		
@@ -315,12 +315,12 @@
 2645	Blood Blamish Snail	45	50	13	0		
 13021	Blood jaguar	28	0	100	0		
 13011	Blood Moon	60	500	500	-2		
-11293	Blood Reaver	100	55	125	0		
-11294	Blood Reaver	100	55	150	0		
+11293	Blood Reaver	100	55	125	0	d	
+11294	Blood Reaver	100	55	150	0	d	
 8367	Blood spawn	0	0	7	0		
 15770	Blood-starved venator	120	-5	345	0		vampyres
-3138	Bloodveld	30	0	134	0		bloodveld
-484	Bloodveld	30	0	120	0		bloodveld
+3138	Bloodveld	30	0	134	0	d	bloodveld
+484	Bloodveld	30	0	120	0	d	bloodveld
 1678	Bloodworm	35	0	45	0		
 15682	Bloody Jack	65	40	100	0		
 15166	Blue dagannoth	81	50	120	0		dagannoth
@@ -345,10 +345,10 @@
 2613	Boris	10	-21	60	0		
 16640	Bork	300	5	1500	0		
 3939	Borrokar	40	0	50	0		
-1224	Bouncer	120	0	116	0		hellhounds
+1224	Bouncer	120	0	116	0	d	hellhounds
 3508	Bouncer (ghost)	145	0	120	0		
-6293	Bouncer (Nightmare Zone)	120	0	232	0		
-6355	Bouncer (Nightmare Zone)	120	0	116	0		
+6293	Bouncer (Nightmare Zone)	120	0	232	0	d	
+6355	Bouncer (Nightmare Zone)	120	0	116	0	d	
 12596	Branda the Fire Queen	100	700	600	0		fire giants
 7310	Brassican Mage	80	0	150	0		
 1736	Brawler	93	0	113	0		
@@ -431,7 +431,7 @@
 7424	Cave lizard	35	5	20	0		
 480	Cave slime	35	0	25	0		cave slimes
 4111	Ceolburg	3	-12	10	0		
-5862	Cerberus	100	100	600	0		bosses;hellhounds
+5862	Cerberus	100	100	600	0	d	bosses;hellhounds
 11482	Champion of Scabaras	160	5	600	0		
 520	Chaos druid	12	0	20	0		chaos druids
 532	Chaos druid warrior	25	14	40	0		chaos druids
@@ -455,9 +455,9 @@
 2910	Chinchompa (Hunter)	1	0	1	0		
 7404	Choke devil	120	0	300	0		dust devils
 1475	Chompy bird	3	0	10	0		birds
-4987	Chronozon	173	0	60	0		
-6292	Chronozon (Nightmare Zone)	173	0	120	0		
-6354	Chronozon (Nightmare Zone)	173	0	60	0		
+4987	Chronozon	173	0	60	0	d	
+6292	Chronozon (Nightmare Zone)	173	0	120	0	d	
+6354	Chronozon (Nightmare Zone)	173	0	60	0	d	
 15169	Chuck up	90	200	110	0		trolls
 4373	City guard	70	0	80	0		ogres
 1206	Clivet	4	0	25	0		
@@ -630,8 +630,8 @@
 142	Demon (Construction)	71	0	79	0		
 15628	Demonic Brutus	200	110	750	0		
 15629	Demonic Brutus	200	110	750	0		
-7144	Demonic gorilla	200	0	380	0		black demons;monkeys
-7147	Demonic gorilla	200	0	380	0		black demons;monkeys
+7144	Demonic gorilla	200	0	380	0	d	black demons;monkeys
+7147	Demonic gorilla	200	0	380	0	d	black demons;monkeys
 7806	Deranged archaeologist	280	300	200	0		bosses
 7513	Derwen	100	200	320	0		
 459	Desert Lizard	20	5	25	0		lizards
@@ -659,15 +659,15 @@
 15234	Dolphin	0	0	45	0		
 8439	Don't Know What	160	0	220	0		
 302	Donny the lad	27	0	37	0		bandits
-14707	Doom of Mokhaiotl	90	160	625	0		bosses
-8995	Doomion	77	0	87	0		
+14707	Doom of Mokhaiotl	90	160	625	0	d	bosses
+8995	Doomion	77	0	87	0	d	
 1778	Double agent	80	0	120	0		
 7312	Double agent	100	0	160	0		
 1777	Double agent	24	0	80	0		
 1644	Dragon impling	0	-10	10	0		
 8612	Drake	120	0	225	2		drakes
 13680	Dreadborn Araxyte	100	100	350	0		araxytes;spiders
-16665	Dreadnoth the Jellied	125	80	2100	0		
+16665	Dreadnoth the Jellied	125	80	2100	0	d	
 15164	Drink troll	9	0	25	0		trolls
 15175	Drink troll queen	155	100	315	0		
 3258	Druid	32	0	30	0		
@@ -676,8 +676,8 @@
 1838	Duck	1	-42	3	0		birds
 2001	Duckling	1	-42	3	0		birds
 5258	Duke (monkey)	130	0	130	0		monkeys
-12191	Duke Sucellus	275	320	485	0		bosses
-12195	Duke Sucellus	215	300	330	0		bosses
+12191	Duke Sucellus	275	320	485	0	d	bosses
+12195	Duke Sucellus	215	300	330	0	d	bosses
 2865	Dungeon rat	10	0	12	0		rats
 2866	Dungeon rat	10	0	12	0		rats
 3607	Dungeon rat	10	0	12	0		rats
@@ -830,7 +830,7 @@
 4881	Flambeed	75	50	210	0		
 6309	Flambeed (Nightmare Zone)	75	50	255	0		
 6370	Flambeed (Nightmare Zone)	75	50	210	0		
-7394	Flaming pyrelord	52	18	125	0		pyrefiends
+7394	Flaming pyrelord	52	18	125	0	d	pyrefiends
 10695	Flawed Golem	6	10	25	1		
 10696	Flawed Golem	6	10	25	1		
 2498	Flesh Crawler	10	15	25	0		flesh crawlers
@@ -1016,15 +1016,15 @@
 7552	Great Olm	175	200	600	0		
 7550	Great Olm	175	200	600	0		
 15200	Great white shark	70	40	243	0		
-7410	Greater abyssal demon	240	50	400	0		abyssal demons
-12387	Greater demon (The Scar)	81	0	87	0		greater demons
-7245	Greater demon	80	0	115	0		greater demons
-7244	Greater demon	50	0	120	0		greater demons
-7871	Greater demon	81	0	120	0		greater demons
-7246	Greater demon	50	0	130	0		greater demons
-2025	Greater demon	81	0	87	0		greater demons
-7278	Greater Nechryael	85	50	205	0		nechryael
-11240	Greater Nechryael	85	50	205	0		nechryael
+7410	Greater abyssal demon	240	50	400	0	d	abyssal demons
+12387	Greater demon (The Scar)	81	0	87	0	d	greater demons
+7245	Greater demon	80	0	115	0	d	greater demons
+7244	Greater demon	50	0	120	0	d	greater demons
+7871	Greater demon	81	0	120	0	d	greater demons
+7246	Greater demon	50	0	130	0	d	greater demons
+2025	Greater demon	81	0	87	0	d	greater demons
+7278	Greater Nechryael	85	50	205	0	d	nechryael
+11240	Greater Nechryael	85	50	205	0	d	nechryael
 12108	Greater Skeleton Hellhound (Calvar'ion)	110	184	30	0	u	hellhounds;skeletons
 6614	Greater Skeleton Hellhound (Vet'ion)	180	275	30	0	u	hellhounds;skeletons
 260	Green dragon	68	10	75	0		green dragons
@@ -1166,9 +1166,9 @@
 10493	Headless Beast (Nightmare Zone)	42	0	100	0	u	
 12825	Healing totem	0	0	1	0		
 135	Hellhound (Construction)	102	0	116	0		
-104	Hellhound	102	0	116	0		hellhounds
-3133	Hellhound	106	0	116	0		hellhounds
-7877	Hellhound	102	0	150	0		hellhounds
+104	Hellhound	102	0	116	0	d	hellhounds
+3133	Hellhound	106	0	116	0	d	hellhounds
+7877	Hellhound	102	0	150	0	d	hellhounds
 3284	Hengel	1	-21	7	0		
 14852	Hermit crab	1	0	75	0		
 14853	Hermit crab	1	0	75	0		
@@ -1202,7 +1202,7 @@
 3287	Hobgoblin	24	0	29	0		hobgoblins
 2241	Hobgoblin	35	0	52	0		hobgoblins
 3288	Hobgoblin	24	0	29	0		hobgoblins
-8996	Holthion	77	0	87	0		
+8996	Holthion	77	0	87	0	d	
 7802	Hoop Snake	20	0	25	0		
 1072	Hopeless creature	39	0	25	0		
 4695	Hopeless creature	59	0	71	0		
@@ -1214,7 +1214,7 @@
 8609	Hydra	100	0	300	0		hydras
 4110	Hygd	3	-12	10	0		
 15553	I DSCIM YOU	25	10	1500	0		
-7584	Ice demon	160	140	140	0		
+7584	Ice demon	160	140	140	0	d	
 14151	Ice elemental (Royal Titans)	30	0	40	0		
 2085	Ice giant	40	0	70	0		ice giants
 2086	Ice giant	40	0	70	0		ice giants
@@ -1250,22 +1250,22 @@
 13802	Ice warrior	47	30	59	0		ice warriors
 647	Ice wolf	70	0	70	0		wolves
 645	Ice wolf	70	0	70	0		wolves
-4813	Icefiend	12	0	15	0		icefiends
-3140	Icefiend	19	0	20	0		icefiends
+4813	Icefiend	12	0	15	0	d	icefiends
+3140	Icefiend	19	0	20	0	d	icefiends
 855	Icelord	40	0	60	0		ice warriors
 854	Icelord	40	0	60	0		ice warriors
 853	Icelord	40	0	60	0		ice warriors
 852	Icelord	40	0	60	0		ice warriors
-16650	Imp (Dagon'hai Trio)	0	0	44	0		
+16650	Imp (Dagon'hai Trio)	0	0	44	0	d	
 3355	Imp Champion	5	0	40	0		
-3134	Imp	6	-42	10	0		
-5007	Imp	1	-42	8	0		
+3134	Imp	6	-42	10	0	d	
+5007	Imp	1	-42	8	0	d	
 15759	Impaler deer	30	0	50	0		
 2614	Imre	10	-21	60	0		
 443	Infernal Mage	60	0	60	0		infernal mages
-9465	Infernal pyrelord	68	18	184	0		pyrefiends
-7397	Insatiable Bloodveld	85	0	290	0		bloodveld
-7398	Insatiable mutated Bloodveld	130	0	410	0		bloodveld
+9465	Infernal pyrelord	68	18	184	0	d	pyrefiends
+7397	Insatiable Bloodveld	85	0	290	0	d	bloodveld
+7398	Insatiable mutated Bloodveld	130	0	410	0	d	bloodveld
 511	Invrigar the Necromancer	14	0	24	0		
 8760	Iorwerth Archer	80	70	105	0		elves
 3428	Iorwerth Archer	80	70	105	0		elves
@@ -1320,11 +1320,11 @@
 2616	Joseph	10	-21	60	0		
 4863	Jubbly bird	6	0	20	0		
 3604	Jubster	81	0	60	0		
-14180	Judge of Yama	150	0	400	0		
-10936	Judge of Yama (A Kingdom Divided)	84	600	260	0		greater demons
-1443	Jungle Demon	170	0	170	0		
-6321	Jungle Demon (Nightmare Zone)	170	0	255	0		
-6382	Jungle Demon (Nightmare Zone)	170	0	170	0		
+14180	Judge of Yama	150	0	400	0	d	
+10936	Judge of Yama (A Kingdom Divided)	84	600	260	0	d	greater demons
+1443	Jungle Demon	170	0	170	0	d	
+6321	Jungle Demon (Nightmare Zone)	170	0	255	0	d	
+6382	Jungle Demon (Nightmare Zone)	170	0	170	0	d	
 1046	Jungle horror	55	0	45	0		jungle horrors
 1044	Jungle horror	55	0	45	0		jungle horrors
 1042	Jungle horror	55	0	45	0		jungle horrors
@@ -1335,7 +1335,7 @@
 232	Jungle Wolf	52	0	69	0		wolves
 5977	Justiciar Zachariah	100	200	320	0		
 14702	Juvenile custodian stalker	45	30	135	0		custodian stalker
-3129	K'ril Tsutsaroth	270	80	255	0		bosses;greater demons
+3129	K'ril Tsutsaroth	270	80	255	0	d	bosses;greater demons
 960	Kalphite Guardian	110	50	170	0		kalphite
 962	Kalphite Guardian	110	50	170	0		kalphite
 959	Kalphite Guardian	110	50	170	0		kalphite
@@ -1427,17 +1427,17 @@
 3233	Leech	35	0	45	0		
 3943	Lensa	40	0	50	0		
 3360	Leon d'Cour	123	0	123	0		
-3982	Lesser demon (Melzar's Maze)	71	0	79	0		lesser demons
-12376	Lesser demon (The Scar)	30	0	40	0		
-12389	Lesser demon (The Scar)	71	0	79	0		lesser demons
-12361	Lesser demon (The Scar)	110	0	80	0		lesser demons
-12363	Lesser demon (The Scar)	110	0	80	0		lesser demons
-12365	Lesser demon (The Scar)	110	0	80	0		lesser demons
-3357	Lesser Demon Champion	142	0	148	0		
-2005	Lesser demon	71	0	79	0		lesser demons
-7247	Lesser demon	71	0	87	0		lesser demons
-7248	Lesser demon	85	0	98	0		lesser demons
-7865	Lesser demon	71	0	110	0		lesser demons
+3982	Lesser demon (Melzar's Maze)	71	0	79	0	d	lesser demons
+12376	Lesser demon (The Scar)	30	0	40	0	d	
+12389	Lesser demon (The Scar)	71	0	79	0	d	lesser demons
+12361	Lesser demon (The Scar)	110	0	80	0	d	lesser demons
+12363	Lesser demon (The Scar)	110	0	80	0	d	lesser demons
+12365	Lesser demon (The Scar)	110	0	80	0	d	lesser demons
+3357	Lesser Demon Champion	142	0	148	0	d	
+2005	Lesser demon	71	0	79	0	d	lesser demons
+7247	Lesser demon	71	0	87	0	d	lesser demons
+7248	Lesser demon	85	0	98	0	d	lesser demons
+7865	Lesser demon	71	0	110	0	d	lesser demons
 2619	Lev	10	-21	60	0		
 2632	Liliya	10	-21	60	0		
 458	Lizard	35	5	40	0		lizards
@@ -1605,7 +1605,7 @@
 7660	Mummy (Pyramid Plunder)	90	0	90	0		
 7661	Mummy (Pyramid Plunder)	90	0	90	0		
 7662	Mummy (Pyramid Plunder)	90	0	90	0		
-7276	Mutated Bloodveld	30	0	170	0		bloodveld
+7276	Mutated Bloodveld	30	0	170	0	d	bloodveld
 12464	Mutated Terrorbird	40	62	320	-2		warped creatures
 12465	Mutated Tortoise	120	0	440	1		warped creatures
 15681	Mute Jack	65	40	100	0		
@@ -1629,16 +1629,16 @@
 5355	Nazastarool	80	0	80	0	u	ghosts
 5354	Nazastarool	58	5	70	0	u	skeletons
 5353	Nazastarool	80	0	70	0	u	zombies
-8	Nechryael	105	20	105	0		nechryael
-11	Nechryael	105	20	105	0		nechryael
-7411	Nechryarch	140	30	320	0		nechryael
+8	Nechryael	105	20	105	0	d	nechryael
+11	Nechryael	105	20	105	0	d	nechryael
+7411	Nechryarch	140	30	320	0	d	nechryael
 1025	Necromancer	18	0	40	0		
 11088	Necromancer (Great Kourend)	50	0	80	0		
 3605	Newtroost	17	0	18	0		
 11278	Nex	260	150	3400	0		
-6318	Nezikchened (Nightmare Zone)	167	0	150	0		
-6379	Nezikchened (Nightmare Zone)	167	0	150	0		
-3962	Nezikchened	167	0	150	0		
+6318	Nezikchened (Nightmare Zone)	167	0	150	0	d	
+6379	Nezikchened (Nightmare Zone)	167	0	150	0	d	
+3962	Nezikchened	167	0	150	0	d	
 7409	Night beast	220	200	550	0		dark beasts
 2629	Nikita	10	-21	60	0		
 2617	Nikolai	10	-21	60	0		
@@ -1678,9 +1678,9 @@
 15677	Oaky Doak	65	40	100	0		
 11751	Obelisk (Tombs of Amascut)	100	60	260	0		
 7416	Obor	60	20	120	0		hill giants
-16673	Ocellus	215	50	2500	0		
+16673	Ocellus	215	50	2500	0	d	
 16675	Ocellus	250	80	1000	0		
-16677	Ocellus	250	250	5250	0		
+16677	Ocellus	250	250	5250	0	d	
 14545	Ocelot	30	0	40	0		
 14547	Ocelot	30	0	40	0		
 14546	Ocelot	30	0	40	0		
@@ -1708,7 +1708,7 @@
 2237	Ork	60	13	110	0		
 13006	Oryx	13	0	19	0		
 15222	Osprey	40	10	72	0		
-8994	Othainian	77	0	87	0		
+8994	Othainian	77	0	87	0	d	
 2843	Otherworldly being	46	15	66	-2		otherworldly beings
 5261	Ouhai	130	0	130	0		monkeys
 16528	Outlaw (A Ruff Situation)	20	0	13	0		
@@ -1836,7 +1836,7 @@
 5373	Poison spider	28	14	25	0		spiders
 3023	Poison spider	52	14	64	0		spiders
 4758	Poltenip	14	20	22	0		
-7515	Porazdir	100	200	320	0		black demons
+7515	Porazdir	100	200	320	0	d	black demons
 13968	Porcupine	2	0	5	0		
 1740	Portal (Pest Control)	120	100	250	-2		
 1744	Portal (Pest Control)	120	100	250	-2		
@@ -1863,10 +1863,10 @@
 15432	Praying mantis	10	10	18	0		
 13784	Prince Itzla Arkan	75	30	250	0		
 15206	Pygmy kraken	50	60	150	0		
-433	Pyrefiend	22	10	45	0		pyrefiends
-3139	Pyrefiend	22	10	48	0		pyrefiends
-6762	Pyrelord	30	10	80	0		pyrefiends
-6795	Pyrelord	30	10	80	0		pyrefiends
+433	Pyrefiend	22	10	45	0	d	pyrefiends
+3139	Pyrefiend	22	10	48	0	d	pyrefiends
+6762	Pyrelord	30	10	80	0	d	pyrefiends
+6795	Pyrelord	30	10	80	0	d	pyrefiends
 5776	Queen spawn	50	0	45	0		
 9118	Rabbit (Prifddinas)	450	200	2000	0		
 1852	Rabbit	1	0	1	0		
@@ -1894,22 +1894,22 @@
 1705	Ravager	23	0	38	0		
 1706	Ravager	33	0	53	0		
 1707	Ravager	43	0	68	0		
-7038	Reanimated abyssal	135	20	35	0		abyssal demons
+7038	Reanimated abyssal	135	20	35	0	d	abyssal demons
 7037	Reanimated aviansie	70	0	35	0		aviansie
 7023	Reanimated bear	15	0	15	0		bears
-7034	Reanimated bloodveld	30	0	35	0		bloodveld
+7034	Reanimated bloodveld	30	0	35	0	d	bloodveld
 7026	Reanimated chaos druid	12	0	35	0		chaos druids
 7033	Reanimated dagannoth	81	0	35	0		dagannoth
-7036	Reanimated demon	71	0	35	0		lesser demons
-7287	Reanimated demon spawn	71	0	85	0		
+7036	Reanimated demon	71	0	35	0	d	lesser demons
+7287	Reanimated demon spawn	71	0	85	0	d	
 7025	Reanimated dog	54	0	35	0		dogs
 7039	Reanimated dragon	68	20	35	0		
 7029	Reanimated elf	80	50	35	0		elves
 7027	Reanimated giant	26	0	35	0		hill giants
 7018	Reanimated goblin	1	-15	5	0		goblins
-11463	Reanimated hellhound	102	0	35	0		hellhounds
+11463	Reanimated hellhound	102	0	35	0	d	hellhounds
 7031	Reanimated horror	55	0	35	0		jungle horrors
-7020	Reanimated imp	1	-42	5	0		
+7020	Reanimated imp	1	-42	5	0	d	
 7032	Reanimated kalphite	110	50	35	0		kalphite
 7021	Reanimated minotaur	10	-21	10	0		minotaurs
 7019	Reanimated monkey	3	0	5	0		monkeys
@@ -1928,7 +1928,7 @@
 15499	Reef snake	100	0	160	0		
 3517	Renegade knight	28	0	48	0		
 7403	Repugnant spectre	220	115	380	0	u	aberrant spectres
-5914	Respiratory system	80	0	50	0		abyssal demons;bosses
+5914	Respiratory system	80	0	50	0	d	abyssal demons;bosses
 7934	Revenant cyclops	49	95	110	0	u	ghosts;revenants
 7938	Revenant dark beast	80	118	140	0	u	ghosts;revenants
 7936	Revenant demon	80	90	80	0	u	ghosts;revenants
@@ -1997,16 +1997,16 @@
 4192	Scarab Swarm	30	90	25	0		scabarites
 1782	Scarab Swarm	30	90	25	0		scabarites
 729	Scarabs	10	15	25	0		scabarites
-12386	Scarred black demon	152	0	157	0		
-12373	Scarred greater demon	40	0	180	0		
-12388	Scarred greater demon	81	0	87	0		
-12374	Scarred hellhound	50	0	25	0		
-12377	Scarred imp	50	0	25	0		
-12360	Scarred lesser demon	110	0	100	0		
-12362	Scarred lesser demon	110	0	100	0		
-12364	Scarred lesser demon	110	0	100	0		
-12378	Scarred lesser demon	90	0	70	0		
-12390	Scarred lesser demon	71	0	79	0		
+12386	Scarred black demon	152	0	157	0	d	
+12373	Scarred greater demon	40	0	180	0	d	
+12388	Scarred greater demon	81	0	87	0	d	
+12374	Scarred hellhound	50	0	25	0	d	
+12377	Scarred imp	50	0	25	0	d	
+12360	Scarred lesser demon	110	0	100	0	d	
+12362	Scarred lesser demon	110	0	100	0	d	
+12364	Scarred lesser demon	110	0	100	0	d	
+12378	Scarred lesser demon	90	0	70	0	d	
+12390	Scarred lesser demon	71	0	79	0	d	
 7548	Scavenger beast	45	0	30	0		
 5918	Scion	50	0	50	0		
 6615	Scorpia	180	284	200	0		bosses;scorpions
@@ -2136,10 +2136,10 @@
 4497	Skeleton fremennik	40	15	40	0	u	skeletons
 130	Skeleton guard	17	4	29	0		
 1540	Skeleton heavy	110	2	114	1	u	skeletons
-5054	Skeleton Hellhound	100	0	55	0		hellhounds
+5054	Skeleton Hellhound	100	0	55	0	d	hellhounds
 12107	Skeleton Hellhound (Calvar'ion)	95	155	30	0	u	hellhounds;skeletons
-6326	Skeleton Hellhound (Nightmare Zone)	100	0	132	0		
-6387	Skeleton Hellhound (Nightmare Zone)	100	0	55	0		
+6326	Skeleton Hellhound (Nightmare Zone)	100	0	132	0	d	
+6387	Skeleton Hellhound (Nightmare Zone)	100	0	55	0	d	
 6613	Skeleton Hellhound (Vet'ion)	150	266	30	0	u	hellhounds;skeletons
 1537	Skeleton hero	110	2	114	1	u	skeletons
 84	Skeleton Mage	14	0	17	0	u	skeletons
@@ -2167,7 +2167,7 @@
 872	Skogre	35	0	71	0	u	ogres;skeletons
 878	Skogre	35	0	71	0	u	ogres;zombies
 879	Skogre	35	0	71	0	u	ogres;skeletons
-7286	Skotizo	200	130	450	0		black demons;greater demons
+7286	Skotizo	200	130	450	0	d	black demons;greater demons
 774	Skraeling (Etceteria)	3	-12	1	0		
 773	Skraeling (Etceteria)	3	-12	1	0		
 3684	Skraeling (Miscellania)	3	-12	1	0		
@@ -2335,7 +2335,7 @@
 7540	Tekton	205	0	300	0		
 7620	Temple Guardian	20	0	45	0		dogs
 8703	Temple Spider	10	20	70	0		spiders
-5912	Tentacle (Abyssal Sire)	1	0	255	0		
+5912	Tentacle (Abyssal Sire)	1	0	255	0	d	
 5646	Tentacle (Temple Trekking)	75	0	75	0		
 5643	Tentacle (Temple Trekking)	75	0	75	0		
 15228	Tern	0	10	22	0		
@@ -2421,10 +2421,10 @@
 1720	Torcher	73	0	57	0		
 1722	Torcher	89	0	70	0		
 1723	Torcher	89	0	71	0		
-13599	Tormented Demon	150	90	600	0		greater demons
-13600	Tormented Demon	150	90	600	0		greater demons
-13601	Tormented Demon	150	90	600	0		greater demons
-13602	Tormented Demon	150	90	600	0		greater demons
+13599	Tormented Demon	150	90	600	0	d	greater demons
+13600	Tormented Demon	150	90	600	0	d	greater demons
+13601	Tormented Demon	150	90	600	0	d	greater demons
+13602	Tormented Demon	150	90	600	0	d	greater demons
 8512	Tormented Soul	10	0	20	0	u	
 3959	Tormented Warrior	76	0	90	0		
 6075	Tortoise	80	0	100	0		
@@ -2465,7 +2465,7 @@
 4121	Troll general	40	200	140	0		trolls
 4120	Troll general	40	200	140	0		trolls
 4123	Troll spectator	25	200	90	0		trolls
-3130	Tstanon Karlak	125	0	142	0		greater demons
+3130	Tstanon Karlak	125	0	142	0	d	greater demons
 11756	Tumeken's Warden	100	70	140	0		
 11758	Tumeken's Warden	100	70	4500	0		
 11762	Tumeken's Warden	150	20	880	0		
@@ -2580,7 +2580,7 @@
 7400	Vitreous Warped Jelly	250	0	220	0		jellies
 3963	Viyeldi	70	0	80	0		
 16680	Void Augmenter	175	50	44	0		
-14179	Void Flare	100	0	140	0		
+14179	Void Flare	100	0	140	0	d	
 2950	Void Knight (Pest Control)	50	100	200	0		
 2951	Void Knight (Pest Control)	50	100	200	0		
 2952	Void Knight (Pest Control)	50	100	200	0		
@@ -2627,8 +2627,8 @@
 5420	Watchman	31	16	22	0		
 1370	Water elemental	30	0	30	0		
 1557	Water wizard	10	0	25	0		
-2916	Waterfiend	128	20	128	0		waterfiends
-2917	Waterfiend	128	20	128	0		waterfiends
+2916	Waterfiend	128	20	128	0	d	waterfiends
+2917	Waterfiend	128	20	128	0	d	waterfiends
 14137	Weaponsmaster	21	20	20	0		
 16226	Webbed-winged Crow	50	0	50	0		
 2603	Werewolf	70	0	100	0		werewolves
@@ -2718,17 +2718,17 @@
 10768	Xarpus	100	100	3400	0		
 10772	Xarpus	200	160	6000	0		
 8340	Xarpus	250	160	5000	0		
-16684	Xarth	170	155	2600	0		
+16684	Xarth	170	155	2600	0	d	
 2628	Yadviga	10	-21	60	0		
 5816	Yak	1	0	50	0		
-14176	Yama	225	333	2500	0		
+14176	Yama	225	333	2500	0	d	
 2847	Yeti	39	0	55	0		
 1636	Young impling	0	-10	10	0		
 3128	Yt-HurKot	60	100	60	0		tzhaar
 7701	Yt-HurKot	100	130	90	0		tzhaar
 3123	Yt-MejKot	120	0	80	0		tzhaar
 2615	Yuri	10	-21	60	0		
-3131	Zakl'n Gritch	127	0	150	0		lesser demons
+3131	Zakl'n Gritch	127	0	150	0	d	lesser demons
 9049	Zalcano	1	0	300	0		
 9050	Zalcano	1	0	1000	0		
 7426	Zamorak crafter	12	0	25	0		
@@ -2881,7 +2881,7 @@
 2044	Zulrah	300	0	500	0		bosses
 537	Zygomite	65	20	65	0		mutated zygomites
 1024	Zygomite	75	20	75	0		mutated zygomites
-100001	Yama	247	666	2875	0		
+100001	Yama	247	666	2875	0	d	
 3	Aberrant spectre	90	15	90	0	u	aberrant spectres
 4	Aberrant spectre	90	15	90	0	u	aberrant spectres
 5	Aberrant spectre	90	15	90	0	u	aberrant spectres
@@ -2900,7 +2900,7 @@
 99	Ghost	18	5	25	0	u	ghosts
 102	Rock Crab	1	0	50	0		crabs
 103	Rock Crab	1	0	50	0		crabs
-105	Hellhound	102	0	116	0		hellhounds
+105	Hellhound	102	0	116	0	d	hellhounds
 253	Black dragon	200	10	190	0		black dragons
 254	Black dragon	200	10	190	0		black dragons
 255	Black dragon	200	10	190	0		black dragons
@@ -2917,10 +2917,10 @@
 398	Guard (Hosidius)	16	5	22	0		
 400	Guard (Hosidius)	16	5	22	0		
 413	Gargoyle	107	-20	105	-2		gargoyles
-416	Abyssal demon	135	20	150	0		abyssal demons
-434	Pyrefiend	22	10	45	0		pyrefiends
-435	Pyrefiend	22	10	45	0		pyrefiends
-436	Pyrefiend	22	10	45	0		pyrefiends
+416	Abyssal demon	135	20	150	0	d	abyssal demons
+434	Pyrefiend	22	10	45	0	d	pyrefiends
+435	Pyrefiend	22	10	45	0	d	pyrefiends
+436	Pyrefiend	22	10	45	0	d	pyrefiends
 444	Infernal Mage	60	0	60	0		infernal mages
 445	Infernal Mage	60	0	60	0		infernal mages
 446	Infernal Mage	60	0	60	0		infernal mages
@@ -2928,9 +2928,9 @@
 472	Ghost	18	5	25	0	u	ghosts
 473	Ghost	18	5	25	0	u	ghosts
 474	Ghost	18	5	25	0	u	ghosts
-485	Bloodveld	30	0	120	0		bloodveld
-486	Bloodveld	30	0	120	0		bloodveld
-487	Bloodveld	30	0	120	0		bloodveld
+485	Bloodveld	30	0	120	0	d	bloodveld
+486	Bloodveld	30	0	120	0	d	bloodveld
+487	Bloodveld	30	0	120	0	d	bloodveld
 505	Ghost	18	5	25	0	u	ghosts
 506	Ghost	18	5	25	0	u	ghosts
 507	Ghost	18	5	25	0	u	ghosts
@@ -3063,22 +3063,22 @@
 1796	Goat	20	10	21	0		
 1853	Rabbit	1	0	1	0		
 1872	Baby black dragon	70	5	80	0		black dragons
-2006	Lesser demon	71	0	79	0		lesser demons
-2007	Lesser demon	71	0	79	0		lesser demons
-2008	Lesser demon	71	0	79	0		lesser demons
-2018	Lesser demon	71	0	79	0		lesser demons
-2026	Greater demon	81	0	87	0		greater demons
-2027	Greater demon	81	0	87	0		greater demons
-2028	Greater demon	81	0	87	0		greater demons
-2029	Greater demon	81	0	87	0		greater demons
-2030	Greater demon	81	0	87	0		greater demons
-2031	Greater demon	81	0	87	0		greater demons
-2032	Greater demon	81	0	87	0		greater demons
-2048	Black demon	152	0	157	0		black demons
-2049	Black demon	152	0	157	0		black demons
-2050	Black demon	152	0	157	0		black demons
-2051	Black demon	152	0	157	0		black demons
-2052	Black demon	152	0	157	0		black demons
+2006	Lesser demon	71	0	79	0	d	lesser demons
+2007	Lesser demon	71	0	79	0	d	lesser demons
+2008	Lesser demon	71	0	79	0	d	lesser demons
+2018	Lesser demon	71	0	79	0	d	lesser demons
+2026	Greater demon	81	0	87	0	d	greater demons
+2027	Greater demon	81	0	87	0	d	greater demons
+2028	Greater demon	81	0	87	0	d	greater demons
+2029	Greater demon	81	0	87	0	d	greater demons
+2030	Greater demon	81	0	87	0	d	greater demons
+2031	Greater demon	81	0	87	0	d	greater demons
+2032	Greater demon	81	0	87	0	d	greater demons
+2048	Black demon	152	0	157	0	d	black demons
+2049	Black demon	152	0	157	0	d	black demons
+2050	Black demon	152	0	157	0	d	black demons
+2051	Black demon	152	0	157	0	d	black demons
+2052	Black demon	152	0	157	0	d	black demons
 2059	Dark wizard	10	0	15	0		
 2076	Fire giant	65	0	111	0		fire giants
 2077	Fire giant	65	0	111	0		fire giants
@@ -3437,15 +3437,15 @@
 5757	Penance Ranger	21	0	20	0		
 5766	Penance Healer	9	0	27	0		
 5831	Ice troll grunt	60	0	80	0		trolls
-5863	Cerberus	100	100	600	0		bosses;hellhounds
-5866	Cerberus	100	100	600	0		bosses;hellhounds
-5874	Black demon	152	0	157	0		black demons
-5875	Black demon	152	0	157	0		black demons
-5876	Black demon	152	0	157	0		black demons
-5877	Black demon	152	0	157	0		black demons
-5887	Abyssal Sire	250	60	425	0		abyssal demons;bosses
-5888	Abyssal Sire	250	60	425	0		abyssal demons;bosses
-5890	Abyssal Sire	250	60	425	0		abyssal demons;bosses
+5863	Cerberus	100	100	600	0	d	bosses;hellhounds
+5866	Cerberus	100	100	600	0	d	bosses;hellhounds
+5874	Black demon	152	0	157	0	d	black demons
+5875	Black demon	152	0	157	0	d	black demons
+5876	Black demon	152	0	157	0	d	black demons
+5877	Black demon	152	0	157	0	d	black demons
+5887	Abyssal Sire	250	60	425	0	d	abyssal demons;bosses
+5888	Abyssal Sire	250	60	425	0	d	abyssal demons;bosses
+5890	Abyssal Sire	250	60	425	0	d	abyssal demons;bosses
 5917	Spawn	10	0	15	0		
 5942	Dagannoth (Waterbirth Island)	75	150	85	0		dagannoth
 5943	Dagannoth (Waterbirth Island)	65	50	95	0		dagannoth
@@ -3520,23 +3520,23 @@
 7103	Glough	248	0	575	0		
 7105	Keef	165	0	180	0		
 7107	Kob	80	200	200	0		
-7145	Demonic gorilla	200	0	380	0		black demons;monkeys
-7146	Demonic gorilla	200	0	380	0		black demons;monkeys
-7148	Demonic gorilla	200	0	380	0		black demons;monkeys
-7149	Demonic gorilla	200	0	380	0		black demons;monkeys
+7145	Demonic gorilla	200	0	380	0	d	black demons;monkeys
+7146	Demonic gorilla	200	0	380	0	d	black demons;monkeys
+7148	Demonic gorilla	200	0	380	0	d	black demons;monkeys
+7149	Demonic gorilla	200	0	380	0	d	black demons;monkeys
 7151	Tortured gorilla	95	0	210	0		monkeys
-7152	Demonic gorilla	200	0	380	0		black demons;monkeys
+7152	Demonic gorilla	200	0	380	0	d	black demons;monkeys
 7153	Tortured gorilla	95	0	210	0		monkeys
 7206	Sand Crab	1	0	60	0		crabs
 7207	Sand Crab	1	0	60	0		crabs
 7250	Dark beast	120	100	220	0		dark beasts
-7256	Hellhound	102	0	116	0		hellhounds
+7256	Hellhound	102	0	116	0	d	hellhounds
 7262	Moss giant	30	0	60	0		moss giants
 7263	Ghost	18	5	25	0	u	ghosts
 7264	Ghost	18	5	25	0	u	ghosts
-7290	Awakened Altar	1	0	100	0		
-7292	Awakened Altar	1	0	100	0		
-7294	Awakened Altar	1	0	100	0		
+7290	Awakened Altar	1	0	100	0	d	
+7292	Awakened Altar	1	0	100	0	d	
+7294	Awakened Altar	1	0	100	0	d	
 7408	Marble gargoyle	190	50	270	0		gargoyles
 7427	Zamorak crafter	12	0	25	0		
 7531	Vespula	88	60	200	0		
@@ -3554,9 +3554,9 @@
 7605	Skeletal Mystic	187	75	160	0	u	skeletons
 7606	Skeletal Mystic	187	75	160	0	u	skeletons
 7622	Khazard warlord	80	0	170	0		
-7656	Lesser demon	71	0	79	0		lesser demons
-7657	Lesser demon	71	0	79	0		lesser demons
-7664	Lesser demon	71	0	79	0		lesser demons
+7656	Lesser demon	71	0	79	0	d	lesser demons
+7657	Lesser demon	71	0	79	0	d	lesser demons
+7664	Lesser demon	71	0	79	0	d	lesser demons
 7682	TzHaar-Hur	60	0	80	0		tzhaar
 7683	TzHaar-Hur	60	0	80	0		tzhaar
 7684	TzHaar-Hur	60	0	80	0		tzhaar
@@ -3574,17 +3574,17 @@
 7855	Dusk	100	0	450	-1		bosses;gargoyles
 7858	Justiciar Zachariah	100	200	320	0		
 7859	Derwen	100	200	320	0		
-7860	Porazdir	100	200	320	0		black demons
+7860	Porazdir	100	200	320	0	d	black demons
 7862	Black dragon	200	10	250	0		black dragons
 7863	Black dragon	200	10	250	0		black dragons
-7866	Lesser demon	71	0	110	0		lesser demons
-7867	Lesser demon	71	0	110	0		lesser demons
+7866	Lesser demon	71	0	110	0	d	lesser demons
+7867	Lesser demon	71	0	110	0	d	lesser demons
 7869	Green dragon	68	10	100	0		green dragons
 7870	Green dragon	68	10	100	0		green dragons
-7872	Greater demon	81	0	120	0		greater demons
-7873	Greater demon	81	0	120	0		greater demons
-7875	Black demon	152	0	200	0		black demons
-7876	Black demon	152	0	200	0		black demons
+7872	Greater demon	81	0	120	0	d	greater demons
+7873	Greater demon	81	0	120	0	d	greater demons
+7875	Black demon	152	0	200	0	d	black demons
+7876	Black demon	152	0	200	0	d	black demons
 7882	Dusk	100	0	450	-1		bosses;gargoyles
 7883	Dusk	100	0	450	-1		bosses;gargoyles
 7884	Dawn	100	0	450	0		bosses;gargoyles
@@ -3799,7 +3799,7 @@
 10865	Sotetseg	150	120	2240	0		
 10868	Sotetseg	200	150	4000	0		
 10888	Bat	5	0	8	0		bats
-10938	Judge of Yama (A Kingdom Divided)	84	600	260	0		greater demons
+10938	Judge of Yama (A Kingdom Divided)	84	600	260	0	d	greater demons
 10947	Lizardman brute	65	0	60	-2		lizardmen
 10955	Xamphur	100	30	450	0		
 10956	Xamphur	100	30	450	0		
@@ -3902,7 +3902,7 @@
 12332	Kasonde the Craven	120	50	200	0		
 12337	Ancient Guardian (Desert Treasure II)	100	50	100	0		
 12354	Jhallan	250	150	1500	0		
-12379	Scarred hellhound	50	0	25	0		
+12379	Scarred hellhound	50	0	25	0	d	
 12425	Vardorvis	180	560	500	0		bosses
 12426	Vardorvis	215	580	700	0		bosses
 12429	Strangled	30	0	40	0		
@@ -3993,8 +3993,8 @@
 14422	Moss giant	30	0	60	0		moss giants
 14423	Rockslug	27	0	27	0		rockslugs
 14430	Grimy Lizard	10	35	75	-2		lizards
-14708	Doom of Mokhaiotl	90	160	625	0		bosses
-14709	Doom of Mokhaiotl	90	160	625	0		bosses
+14708	Doom of Mokhaiotl	90	160	625	0	d	bosses
+14709	Doom of Mokhaiotl	90	160	625	0	d	bosses
 14854	Hermit crab	1	0	75	0		
 14855	Hermit crab	1	0	75	0		
 14856	Hermit crab	1	0	75	0		
@@ -4032,7 +4032,7 @@
 16644	Dagon'hai Elder	100	80	640	0		
 16646	Dagon'hai Monk	100	80	640	0		
 16648	Dagon'hai Monk	100	80	640	0		
-16674	Ocellus	215	50	2500	0		
+16674	Ocellus	215	50	2500	0	d	
 16676	Ocellus	250	80	1000	0		
 16836	Outlaw (Mudfoot's Big Adventure)	3	8	9	0		
 19597	Pete Kayer	120	0	115	0		
@@ -4047,7 +4047,7 @@
 6492	Kree'arra (PvM Arena)	260	200	255	0		
 6493	Commander Zilyana (PvM Arena)	300	100	255	0		
 6494	General Graardor (PvM Arena)	250	90	255	0		
-6495	K'ril Tsutsaroth (PvM Arena)	270	80	255	0		
+6495	K'ril Tsutsaroth (PvM Arena)	270	80	255	0	d	
 6496	Dagannoth Supreme (PvM Arena)	128	550	255	0		
 6497	Dagannoth Prime (PvM Arena)	255	10	255	0		
 6498	Dagannoth Rex (PvM Arena)	255	255	255	0		
@@ -4078,7 +4078,7 @@
 7549	Scavenger beast	67	0	45	0		
 7570	Guardian (Chambers of Xeric)	150	0	375	0		
 7572	Guardian (Chambers of Xeric)	150	0	375	0		
-7585	Ice demon	240	140	210	0		
+7585	Ice demon	240	140	210	0	d	
 11199	Guard (Deadman Mode)	300	8	800	0		
 11200	Guard (Deadman Mode)	300	8	800	0		
 11201	Guard (Deadman Mode)	300	8	800	0		
@@ -4096,8 +4096,8 @@
 12092	Alomone	4	0	25	0		
 12093	Alomone	4	0	25	0		
 12094	Alomone	4	0	25	0		
-12193	Duke Sucellus	215	300	330	0		
-12194	Duke Sucellus	215	300	330	0		
+12193	Duke Sucellus	215	300	330	0	d	
+12194	Duke Sucellus	215	300	330	0	d	
 12460	Guard (Deadman Mode)	300	8	800	0		
 12461	Guard (Deadman Mode)	300	8	800	0		
 14012	The Hueycoatl	125	350	2500	0		
@@ -4106,7 +4106,7 @@
 15566	Guard (Deadman Mode)	300	8	800	0		
 15568	Guard (Deadman Mode)	300	8	800	0		
 15610	Black dragon (Echo)	200	0	190	0		
-15612	Cerberus (Echo)	115	70	1620	0		
+15612	Cerberus (Echo)	115	70	1620	0	d	
 15616	Kalphite Queen (Echo)	300	65	561	0		
 15617	Kalphite Queen (Echo)	300	10	561	0		
 16653	Animated Sword	115	0	120	0		
@@ -4152,7 +4152,7 @@
 8081	Brutal green dragon	168	10	175	0		
 8922	Iorwerth Warrior	80	50	105	0		elves
 8923	Iorwerth Archer	80	70	105	0		elves
-9611	Mutated Bloodveld	30	0	170	0		bloodveld
+9611	Mutated Bloodveld	30	0	170	0	d	bloodveld
 10498	Chicken	1	-42	3	0		birds
 10499	Chicken	1	-42	3	0		birds
 10815	The Maiden of Sugadinti	80	0	2000	0		
@@ -4178,15 +4178,15 @@
 12762	Armoured zombie (Zemouregal's Base)	68	10	75	1	u	zombies
 13010	Green dragon	68	10	75	0		green dragons
 13488	Green dragon	68	10	75	0		green dragons
-13603	Tormented Demon	150	90	600	0		greater demons
-13604	Tormented Demon	150	90	600	0		greater demons
-13605	Tormented Demon	150	90	600	0		greater demons
-13606	Tormented Demon	150	90	600	0		greater demons
+13603	Tormented Demon	150	90	600	0	d	greater demons
+13604	Tormented Demon	150	90	600	0	d	greater demons
+13605	Tormented Demon	150	90	600	0	d	greater demons
+13606	Tormented Demon	150	90	600	0	d	greater demons
 13624	Rat	1	-42	2	0		rats
 14155	Pirate	20	0	20	0		pirates
 14156	Pirate	20	0	20	0		pirates
-14207	Imp	1	-42	8	0		
-14233	Imp	1	-42	8	0		
+14207	Imp	1	-42	8	0	d	
+14233	Imp	1	-42	8	0	d	
 14401	Emissary Brawler	70	30	35	0		
 14402	Emissary Brawler	70	30	35	0		
 14403	Emissary Brawler	70	30	55	0		

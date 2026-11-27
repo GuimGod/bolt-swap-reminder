@@ -6,6 +6,7 @@ package com.boltswapreminder;
 
 import com.google.inject.Provides;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import javax.inject.Inject;
@@ -20,24 +21,37 @@ import net.runelite.api.NPC;
 import net.runelite.api.Player;
 import net.runelite.api.Prayer;
 import net.runelite.api.Skill;
+import net.runelite.api.events.FakeXpDrop;
+import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.GameTick;
+import net.runelite.api.events.HitsplatApplied;
+import net.runelite.api.events.NpcChanged;
+import net.runelite.api.events.NpcDespawned;
+import net.runelite.api.events.StatChanged;
+import net.runelite.api.events.VarbitChanged;
 import net.runelite.api.gameval.DBTableID;
 import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.gameval.ItemID;
 import net.runelite.api.gameval.VarPlayerID;
 import net.runelite.api.gameval.VarbitID;
+import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.game.ItemManager;
+import net.runelite.client.party.PartyService;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.plugins.specialcounter.SpecialCounterUpdate;
+import net.runelite.client.plugins.specialcounter.SpecialWeapon;
 import net.runelite.client.ui.overlay.OverlayManager;
 
 /**
  * With a crossbow in hand, ruby or diamond bolts (e) in the ammunition slot (or in Dizana's quiver) and
  * the other kind in the inventory, works out which of the two deals more to the monster being fought at the health it has
- * now, and shows the other bolts as soon as they are the better ones. It only draws: nothing is clicked, equipped or changed.
+ * now, and with the Defence it has left after the special attacks that lowered it (a Bandos godsword, a Dragon warhammer,
+ * an Elder maul...: the player's own, and the party's through RuneLite's Special Attack Counter), and shows the other bolts
+ * as soon as they are the better ones. It only draws: nothing is clicked, equipped or changed.
  */
 @Slf4j
 @PluginDescriptor(
@@ -120,6 +134,12 @@ public class BoltSwapReminderPlugin extends Plugin
 	@Inject
 	private BoltInventoryOverlay inventoryOverlay;
 
+	@Inject
+	private ClientThread clientThread;
+
+	@Inject
+	private PartyService party;
+
 	private BoltData data;
 	private volatile Reminder reminder;
 	private int lastPlayerFight = -1;
@@ -139,6 +159,7 @@ public class BoltSwapReminderPlugin extends Plugin
 	protected void startUp() throws IOException
 	{
 		data = new BoltData();
+		clientThread.invoke(this::forgetSpecialAttacks);
 		overlayManager.add(overlay);
 		overlayManager.add(inventoryOverlay);
 	}
@@ -149,6 +170,8 @@ public class BoltSwapReminderPlugin extends Plugin
 		overlayManager.remove(overlay);
 		overlayManager.remove(inventoryOverlay);
 		reminder = null;
+		// what the client thread reads and writes is cleared on it
+		clientThread.invoke(this::forgetSpecialAttacks);
 	}
 
 	Reminder reminder()
@@ -162,6 +185,7 @@ public class BoltSwapReminderPlugin extends Plugin
 		Reminder found = null;
 		try
 		{
+			landSpecialAttack();
 			if (client.getGameState() == GameState.LOGGED_IN && client.getLocalPlayer() != null && data != null
 				&& !fightingPlayer(client.getTickCount()))
 			{
@@ -337,7 +361,7 @@ public class BoltSwapReminderPlugin extends Plugin
 		shot.bonusDenominator = bonus[1];
 
 		BoltCalc.Target target = new BoltCalc.Target();
-		target.defenceLevel = monster.defenceLevel;
+		target.defenceLevel = defenceNow(npc, monster);
 		target.heavyDefence = monster.heavyDefence;
 		target.flatArmour = monster.flatArmour;
 		target.hitpoints = lastHealth;
@@ -667,9 +691,6 @@ public class BoltSwapReminderPlugin extends Plugin
 	}
 
 	@Inject
-	private net.runelite.client.callback.ClientThread reportThread;
-
-	@Inject
 	private okhttp3.OkHttpClient reportHttp;
 
 	/** "Bug or suggestion" in the settings works as a button: each click opens the report window, whichever way the box ends up. */
@@ -678,13 +699,347 @@ public class BoltSwapReminderPlugin extends Plugin
 	{
 		if ("boltswapreminder".equals(event.getGroup()) && "reportBug".equals(event.getKey()) && event.getNewValue() != null)
 		{
-			reportThread.invokeLater(() ->
+			clientThread.invokeLater(() ->
 			{
 				final NPC monster = lastNpc;
 				final String name = monster == null ? null : monster.getName();
 				final String context = ReportWindow.context(client, monster);
 				javax.swing.SwingUtilities.invokeLater(() -> ReportWindow.open(client.getCanvas(), name, context, reportHttp));
 			});
+		}
+	}
+
+	/** The Defence drains counted on each monster around ({@link DrainTracker}). */
+	private final DrainTracker drains = new DrainTracker();
+	/** The special attack energy last seen, -1 before the first. */
+	private int specEnergy = -1;
+	/** The Hitpoints experience last seen, and the client cycle it last grew on (an Elder maul hit deals damage). */
+	private int hitpointsXp = -1;
+	private int hitpointsXpCycle;
+	/**
+	 * The player's own special attack waiting for its hitsplat: the weapon, the monster, the tick it lands on and how many
+	 * hitsplats it deals.
+	 */
+	private SpecialWeapon specWeapon;
+	private NPC specTarget;
+	private int specTick;
+	private int specSplats;
+	private boolean specDealtDamage;
+	private final List<Integer> specHits = new ArrayList<>();
+
+	/** Ticks from the Special Attack Counter sending a party message to it coming here (measured: 116 of 118 Ralos). */
+	static final int PARTY_MESSAGE_TICKS = 1;
+
+	/**
+	 * The ornamented and other dresses of the weapons whose special attack lowers Defence, each with the item it is (the
+	 * Combat Check plugin's variant table): read as that weapon.
+	 */
+	private static final int[][] DRESSES = {
+		{ItemID.BGSG, ItemID.BGS},
+		{ItemID.DRAGON_WARHAMMER_ORNAMENT, ItemID.DRAGON_WARHAMMER},
+		{ItemID.BH_DRAGON_WARHAMMER_CORRUPTED, ItemID.DRAGON_WARHAMMER},
+		{ItemID.ELDER_MAUL_ORNAMENT, ItemID.ELDER_MAUL},
+		{ItemID.BRAIN_BROKEN_ANCHOR, ItemID.BRAIN_ANCHOR},
+	};
+
+	/**
+	 * Vorkath going back to sleep after a kill (OSRS Wiki infobox, Vorkath: 8058 and 8059 asleep, 8060 and 8061 awake): the
+	 * sleeping form of the repeatable fight has the same Defence as the awake one, so the change alone would keep the
+	 * drains of the kill before for the next.
+	 */
+	private static final int[] VORKATH_ASLEEP = {8058, 8059};
+
+	private void forgetSpecialAttacks()
+	{
+		drains.clear();
+		specWeapon = null;
+		specTarget = null;
+		specEnergy = -1;
+		hitpointsXp = -1;
+		specHits.clear();
+	}
+
+	/**
+	 * The Defence the monster fought has now: the table's, lowered by the special attacks counted on it, in the order they
+	 * landed (none for a fight immune to drains, never below its floor, with the levels it wins back with time).
+	 */
+	private int defenceNow(NPC npc, BoltData.Monster monster)
+	{
+		int displayed = client.getVarpValue(VarPlayerID.HPBAR_HUD_NPC) == npc.getId()
+			? client.getVarbitValue(VarbitID.HPBAR_HUD_BASEHP) : 0;
+		boolean awakened = DefenceDrains.awakened(npc.getId(), monster.hitpoints, displayed);
+		return DefenceDrains.left(npc.getId(), monster.demon, awakened, DefenceDrains.full(monster.defenceLevel),
+			drains.of(npc.getIndex(), npc), drains.ticksSince(npc.getIndex(), npc, client.getTickCount())).defence;
+	}
+
+	/**
+	 * The player's own special attacks are found the way RuneLite's Special Attack Counter finds them: the energy drops
+	 * while one of its weapons is held, and the player's hitsplat lands on the monster attacked on the tick the attack
+	 * hits. They are counted here, in a party too: the party's message about them is not counted again.
+	 */
+	@Subscribe
+	public void onVarbitChanged(VarbitChanged event)
+	{
+		if (event.getVarpId() != VarPlayerID.SA_ENERGY)
+		{
+			return;
+		}
+		int energy = event.getValue();
+		boolean used = specEnergy != -1 && energy < specEnergy;
+		specEnergy = energy;
+		if (!used)
+		{
+			return;
+		}
+		// the player and the monsters are not updated yet: what is attacked is read once they are
+		final int serverTick = client.getTickCount();
+		clientThread.invokeLater(() ->
+		{
+			int item = weaponInHand();
+			specWeapon = specialWeapon(item);
+			specSplats = item == ItemID.TONALZTICS_OF_RALOS_CHARGED ? 2 : 1;
+			specHits.clear();
+			Player me = client.getLocalPlayer();
+			Actor target = me == null ? null : me.getInteracting();
+			specTarget = specWeapon != null && target instanceof NPC ? (NPC) target : null;
+			if (specTarget == null)
+			{
+				specWeapon = null;
+				return;
+			}
+			specDealtDamage = hitpointsXpCycle == client.getGameCycle();
+			int distance = 1;
+			net.runelite.api.coords.WorldPoint at = me.getWorldLocation();
+			net.runelite.api.coords.WorldArea area = specTarget.getWorldArea();
+			if (at != null && area != null)
+			{
+				distance = area.distanceTo(at);
+			}
+			specTick = serverTick + specWeapon.getHitDelay(distance);
+		});
+	}
+
+	/** The item id of the weapon in the player's hand, -1 for none. */
+	private int weaponInHand()
+	{
+		ItemContainer worn = client.getItemContainer(InventoryID.WORN);
+		Item weapon = worn == null ? null : worn.getItem(EquipmentInventorySlot.WEAPON.getSlotIdx());
+		return weapon == null ? -1 : weapon.getId();
+	}
+
+	/**
+	 * The Special Attack Counter's weapon of an item, or null; an ornamented one as its weapon ({@link #DRESSES}). Two that
+	 * it does not list are read as the weapon whose special attack they have (OSRS Wiki): the Arclight without charges,
+	 * which "functions identically to Darklight", and the Tonalztics of Ralos without charges, whose special attack hits
+	 * once.
+	 */
+	static SpecialWeapon specialWeapon(int itemId)
+	{
+		int base = itemId;
+		for (int[] dress : DRESSES)
+		{
+			if (dress[0] == itemId)
+			{
+				base = dress[1];
+			}
+		}
+		for (int item : new int[]{itemId, base})
+		{
+			for (SpecialWeapon w : SpecialWeapon.values())
+			{
+				for (int id : w.getItemID())
+				{
+					if (id == item)
+					{
+						return w;
+					}
+				}
+			}
+		}
+		if (itemId == ItemID.ARCLIGHT_INACTIVE)
+		{
+			return SpecialWeapon.DARKLIGHT;
+		}
+		return itemId == ItemID.TONALZTICS_OF_RALOS_UNCHARGED ? SpecialWeapon.TONALZTICS_OF_RALOS : null;
+	}
+
+	/**
+	 * The hits of a Tonalztics of Ralos' special attack that landed, of the first {@code splats} hitsplats on the tick it
+	 * hits; null while they have not all come.
+	 */
+	static Integer landedHits(List<Integer> hitsplats, int splats)
+	{
+		if (hitsplats.size() < splats)
+		{
+			return null;
+		}
+		int landed = 0;
+		for (int i = 0; i < splats; i++)
+		{
+			landed += Math.min(hitsplats.get(i), 1);
+		}
+		return landed;
+	}
+
+	/**
+	 * The weapon's hitsplat among the player's own on the tick its special attack hits, as the Special Attack Counter picks
+	 * it: the first for a delayed hit (every ranged and magic special attack), the last for an instant one (the melee ones
+	 * but the Elder maul), since a thrall's and vengeance's come between the two kinds; null for none yet.
+	 */
+	static Integer weaponHitsplat(SpecialWeapon weapon, List<Integer> hitsplats)
+	{
+		if (hitsplats.isEmpty())
+		{
+			return null;
+		}
+		return hitsplats.get(weapon.getHitDelay(1) > 1 ? 0 : hitsplats.size() - 1);
+	}
+
+	@Subscribe
+	public void onStatChanged(StatChanged event)
+	{
+		if (event.getSkill() == Skill.HITPOINTS)
+		{
+			if (event.getXp() > hitpointsXp)
+			{
+				hitpointsXpCycle = client.getGameCycle();
+			}
+			hitpointsXp = event.getXp();
+		}
+	}
+
+	@Subscribe
+	public void onFakeXpDrop(FakeXpDrop event)
+	{
+		if (event.getSkill() == Skill.HITPOINTS)
+		{
+			hitpointsXpCycle = client.getGameCycle();
+		}
+	}
+
+	@Subscribe
+	public void onHitsplatApplied(HitsplatApplied event)
+	{
+		if (specTarget != null && event.getActor() == specTarget && event.getHitsplat().isMine()
+			&& client.getTickCount() == specTick)
+		{
+			specHits.add(event.getHitsplat().getAmount());
+		}
+	}
+
+	/** Counts the player's own special attack once it has landed, as the Special Attack Counter reads its hit. */
+	private void landSpecialAttack()
+	{
+		if (specWeapon == null || specTarget == null)
+		{
+			return;
+		}
+		int tick = client.getTickCount();
+		Integer hit = null;
+		if (specWeapon == SpecialWeapon.ELDER_MAUL)
+		{
+			// read from the Hitpoints experience on the tick of the attack, without waiting for the hitsplat
+			hit = specDealtDamage ? 1 : 0;
+		}
+		else if (tick == specTick)
+		{
+			hit = specWeapon == SpecialWeapon.TONALZTICS_OF_RALOS ? landedHits(specHits, specSplats)
+				: weaponHitsplat(specWeapon, specHits);
+			if (hit == null)
+			{
+				return; // the hitsplat may still come this tick
+			}
+		}
+		else if (tick < specTick)
+		{
+			return;
+		}
+		if (hit != null)
+		{
+			drains.add(specTarget.getIndex(), specTarget, specWeapon, hit, DefenceDrains.tekton(specTarget.getId()), specTick);
+		}
+		specWeapon = null;
+		specTarget = null;
+		specHits.clear();
+	}
+
+	/**
+	 * A party member's special attack, sent by their Special Attack Counter (it is read only while this player has that
+	 * plugin on). The player's own comes back the same way and is skipped: it was counted when it landed.
+	 */
+	@Subscribe
+	public void onSpecialCounterUpdate(SpecialCounterUpdate event)
+	{
+		if (party.getLocalMember() == null || party.getLocalMember().getMemberId() == event.getMemberId())
+		{
+			return;
+		}
+		clientThread.invoke(() ->
+		{
+			if (event.getWorld() != client.getWorld())
+			{
+				return;
+			}
+			NPC npc = client.getTopLevelWorldView().npcs().byIndex(event.getNpcIndex());
+			if (npc != null)
+			{
+				drains.add(npc.getIndex(), npc, event.getWeapon(), event.getHit(), DefenceDrains.tekton(npc.getId()),
+					partyHitTick(event.getWeapon(), client.getTickCount()));
+			}
+		});
+	}
+
+	/**
+	 * The tick a party member's special attack is counted on, from the tick its message came: the Special Attack Counter
+	 * sends an Elder maul's the tick after the attack, on the tick its hit lands once the message arrives, and any other
+	 * weapon's on the tick its hit lands, which arrives a tick later ({@link #PARTY_MESSAGE_TICKS}).
+	 */
+	static int partyHitTick(SpecialWeapon weapon, int received)
+	{
+		return weapon == SpecialWeapon.ELDER_MAUL ? received : received - PARTY_MESSAGE_TICKS;
+	}
+
+	/**
+	 * A monster that changes into one with another Defence (a new phase) keeps nothing of the drains, nor one whose Defence
+	 * the game gives back on the change ({@link DefenceDrains#resets}), nor one that dies or goes back to sleep: the next
+	 * fight with it starts from its full Defence.
+	 */
+	@Subscribe
+	public void onNpcChanged(NpcChanged event)
+	{
+		NPC npc = event.getNpc();
+		BoltData d = data;
+		if (d == null || event.getOld() == null)
+		{
+			return;
+		}
+		if (npc.isDead()
+			|| forgetsOnChange(d.monster(event.getOld().getId()), d.monster(npc.getId()), event.getOld().getId(), npc.getId()))
+		{
+			drains.forget(npc.getIndex(), npc);
+		}
+	}
+
+	/** True when the change of a monster from {@code oldId} (row {@code before}) into {@code newId} (row {@code now}) drops its drains. */
+	static boolean forgetsOnChange(BoltData.Monster before, BoltData.Monster now, int oldId, int newId)
+	{
+		return before == null || now == null || before.defenceLevel != now.defenceLevel
+			|| DefenceDrains.resets(oldId, newId) || java.util.Arrays.stream(VORKATH_ASLEEP).anyMatch(id -> id == newId);
+	}
+
+	/** Whatever lowered a monster's Defence is gone with it: a monster seen again is a new one to the game's index. */
+	@Subscribe
+	public void onNpcDespawned(NpcDespawned event)
+	{
+		drains.forget(event.getNpc().getIndex(), event.getNpc());
+	}
+
+	@Subscribe
+	public void onGameStateChanged(GameStateChanged event)
+	{
+		if (event.getGameState() == GameState.LOGIN_SCREEN || event.getGameState() == GameState.HOPPING)
+		{
+			forgetSpecialAttacks();
 		}
 	}
 }

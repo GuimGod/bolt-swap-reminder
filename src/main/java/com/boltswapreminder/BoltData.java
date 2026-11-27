@@ -27,6 +27,8 @@ final class BoltData
 		final int hitpoints;
 		final int flatArmour;
 		final boolean undead;
+		/** A demon: Arclight's and Emberlight's special attacks lower its levels more (OSRS Wiki). */
+		final boolean demon;
 		/** The Slayer categories it belongs to, as {@link #taskKey} writes them. */
 		final Set<String> slayer;
 
@@ -38,6 +40,7 @@ final class BoltData
 			hitpoints = Integer.parseInt(c[4]);
 			flatArmour = c.length > 5 && !c[5].isEmpty() ? Integer.parseInt(c[5]) : 0;
 			undead = c.length > 6 && c[6].contains("u");
+			demon = c.length > 6 && c[6].contains("d");
 			Set<String> categories = new HashSet<>();
 			if (c.length > 7)
 			{
